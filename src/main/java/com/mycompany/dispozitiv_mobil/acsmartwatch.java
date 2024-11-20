@@ -1,5 +1,9 @@
 package com.mycompany.dispozitiv_mobil;
-public class acsmartwatch {
 
+/**
+ *
+ * @author tonyk
+ */
+public class acsmartwatch {
     int y;
 }

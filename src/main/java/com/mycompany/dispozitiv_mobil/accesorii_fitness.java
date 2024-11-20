@@ -46,7 +46,7 @@ public accesorii_fitness(accesorii_fitness other) //constructor de copiere
 public String toString() //rescriere toString
 {   if(curea_ajustabila=true)
     return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nPret: " + pret + "\nTip accesoriu: " + tip_accesoriu + "\nCuloare bratara: " + culoare_bratara + "\nTip catarama bratara: " + tip_catarama_bratara + "\nCurea ajustabila: Da" + "\nTip incarcator: " + tip_incarcator + "\n";
-else return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nPret: " + pret + "\nTip accesoriu: " + tip_accesoriu + "\nCuloare bratara: " + culoare_bratara + "\nTip catarama bratara: " + tip_catarama_bratara + "\nCurea ajustabila: Nu" + "\nTip incarcator: " + tip_incarcator + "\n";
+    else return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nPret: " + pret + "\nTip accesoriu: " + tip_accesoriu + "\nCuloare bratara: " + culoare_bratara + "\nTip catarama bratara: " + tip_catarama_bratara + "\nCurea ajustabila: Nu" + "\nTip incarcator: " + tip_incarcator + "\n";
 }
 
  public static void main(String[] args)

@@ -37,7 +37,7 @@ public fitness_band(fitness_band other) //constructor de copiere
 @Override
 public String toString() //rescriere toString
 {
-    return "Brand: " + Brand + "\nModel:" + model + "\nMarimea ecranului: " + marime_ecran + "inch" + "\nBaterie" + baterie + "mAh" + "\nSenzor: " + senzor + "\nPret: " + pret + "lei" + "\nRezistenta apa: " + rezistenta_apa;
+    return "Brand: " + Brand + "\nModel: " + model + "\nMarimea ecranului: " + marime_ecran + " inch" + "\nBaterie: " + baterie + " mAh" + "\nSenzor: " + senzor + "\nPret: " + pret + "lei" + "\nRezistenta apa: " + rezistenta_apa;
 }
 
  public static void main(String[] args)

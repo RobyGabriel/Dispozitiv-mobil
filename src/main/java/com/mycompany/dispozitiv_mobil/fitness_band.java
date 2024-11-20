@@ -6,33 +6,36 @@ package com.mycompany.dispozitiv_mobil;
  */
 public class fitness_band extends Dispozitiv_mobil
 {
-    String Firma;
-    int ecran;
+    String senzor;
 
 public fitness_band() //constructor fara argumente
 {
     super();
-    this.Firma="";    
-    this.ecran=0;
+    this.senzor="";
 }
 
-public fitness_band(String Brand, int marime_ecran, String Firma, int ecran) //constructor cu toate argumentele
+public fitness_band(String Brand, double marime_ecran, String senzor, int pret) //constructor cu toate argumentele
 {
-    super(Brand, marime_ecran);
-    this.Firma=Brand;
-    this.ecran=marime_ecran;
+    super(Brand, marime_ecran,pret);
+    this.senzor=senzor;
 }
 
 public fitness_band(fitness_band other) //constructor de copiere
 {
     super(other);
-    this.Firma=other.Firma;
-    this.ecran=other.ecran;
+    this.senzor=other.senzor;
 }
 
 @Override
 public String toString() //rescriere toString
 {
-    return "Brand: " + Firma + "/nMarimea ecranului:" + ecran;
+    return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nSenzor: " + senzor + "\nPret: " + pret;
 }
+
+ public static void main(String[] args)
+    {
+     fitness_band test=new fitness_band("Samsung",1.5,"pulsoximetru",700);
+     System.out.println(test);
+    }
 }
+

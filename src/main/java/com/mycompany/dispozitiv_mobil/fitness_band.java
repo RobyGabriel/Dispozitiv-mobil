@@ -18,7 +18,7 @@ public fitness_band() //constructor fara argumente
     this.rezistenta_apa="";
 }
 
-public fitness_band(String model, String Brand, double marime_ecran, double pret,int baterie, String senzor, String rezistenta_apa) //constructor cu toate argumentele
+public fitness_band(String Brand, String model, double marime_ecran, double pret, int baterie, String senzor, String rezistenta_apa) //constructor cu toate argumentele
 {
     super(Brand, marime_ecran,pret,baterie);
     this.model=model;
@@ -37,11 +37,12 @@ public fitness_band(fitness_band other) //constructor de copiere
 @Override
 public String toString() //rescriere toString
 {
-    return "Brand: " + Brand + "\nModel:" + model + "\nMarimea ecranului: " + marime_ecran + "\nSenzor: " + senzor + "\nPret: " + pret + "Rezistenta apa: " + rezistenta_apa;
+    return "Brand: " + Brand + "\nModel:" + model + "\nMarimea ecranului: " + marime_ecran + "inch" + "Baterie" + baterie + "mAh" + "\nSenzor: " + senzor + "\nPret: " + pret + "lei" + "Rezistenta apa: " + rezistenta_apa;
 }
 
  public static void main(String[] args)
     {
-
+        fitness_band test= new fitness_band("Samsung", "Galaxy", 1.5, 600, 2000, "pulsoximetru", "IP68");
+        System.out.println(test);
     }
 }

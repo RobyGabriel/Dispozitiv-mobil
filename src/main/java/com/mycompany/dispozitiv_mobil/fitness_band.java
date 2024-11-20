@@ -6,5 +6,5 @@ package com.mycompany.dispozitiv_mobil;
  */
 public class fitness_band 
 {
-    int ess;
+    int fitess;
 }

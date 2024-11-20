@@ -6,7 +6,7 @@ package com.mycompany.dispozitiv_mobil;
 public class Tableta extends Dispozitiv_mobil {
     String procesor;
     String model;
-    boolean tast;
+    boolean tastatura;
     int camera;
     //constructor fara argumente
     public Tableta(){
@@ -21,7 +21,7 @@ public Tableta(String brand, double marime_ecran, String model, int camera, Stri
     this.model=model;
     this.procesor=procesor;
     this.camera=camera;
-    this.tast=tast;
+    this.tastatura=tastatura;
 }
      //constructor de copiere
 public Tableta(Tableta a){
@@ -29,11 +29,11 @@ public Tableta(Tableta a){
     this.model=a.model;
     this.procesor=a.procesor;
     this.camera=a.camera;
-    this.tast=a.tast;
+    this.tastatura=a.tastatura;
 }
     //metoda toString
 public String toString(){
-    if(tast)
+    if(tastatura)
         return "\nBrand " + Brand + " " + model+ "\nProcesor " + procesor + "\nMarime_ecran "+marime_ecran+" inch"+"\nCamera "+camera+ "\nBaterie "+baterie+ " mAh"+ "\nPret "+pret+"lei\n"+"Are tastatura\n";
     else
         return "\nBrand " + Brand + " " + model+ "\nProcesor " + procesor + "\nMarime_ecran "+marime_ecran+" inch"+"\nCamera "+camera+ "\nBaterie "+baterie+ " mAh"+ "\nPret "+pret+"lei\n";

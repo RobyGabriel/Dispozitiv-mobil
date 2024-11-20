@@ -13,7 +13,7 @@ public class smartwatch extends Dispozitiv_mobil{
         rez_apa = "";
     }
 
-    public smartwatch(String brand, double marime_ecran,double pret,String culoare, int baterie, String tip_ecran, String rez_apa) {
+    public smartwatch(String brand, double marime_ecran,double pret,int baterie,String culoare, String tip_ecran, String rez_apa) {
         super(brand, marime_ecran,pret,baterie);
         this.culoare = culoare;       //constructor cu toate argumentele
         this.tip_ecran = tip_ecran;
@@ -35,7 +35,7 @@ public String toString() //rescriere toString
 
  public static void main(String[] args)
     {
-     smartwatch test=new smartwatch();
+     smartwatch test=new smartwatch("Samsung",2.0,500,2000,"Negru","LCD","IP68");
      System.out.println(test);
     }
 }

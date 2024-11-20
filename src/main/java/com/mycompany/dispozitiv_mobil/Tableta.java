@@ -14,6 +14,7 @@ public class Tableta extends Dispozitiv_mobil {
     procesor="";
     model="";
     camera=0;
+    tastatura=false;
     }
     //constructor cu toate argumentele
 public Tableta(String brand, double marime_ecran, String model, int camera, String procesor, double pret, int baterie, boolean tast){

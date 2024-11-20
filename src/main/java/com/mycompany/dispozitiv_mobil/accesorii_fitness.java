@@ -14,9 +14,9 @@ public class accesorii_fitness extends Dispozitiv_mobil
     this.culoare_bratara="";
 }
 
-public accesorii_fitness(String Brand, double marime_ecran, int pret, String culoare_bratara) //constructor cu toate argumentele
+public accesorii_fitness(String Brand, double marime_ecran, double pret, int baterie, String culoare_bratara) //constructor cu toate argumentele
 {
-    super(Brand, marime_ecran,pret);
+    super(Brand, marime_ecran,pret,baterie);
     this.culoare_bratara=culoare_bratara;
 }
 
@@ -33,7 +33,6 @@ public String toString() //rescriere toString
 
  public static void main(String[] args)
     {
-     accesorii_fitness test=new accesorii_fitness("Samsung",1.5,700,"neagra");
-     System.out.println(test);
+        
     }
 }

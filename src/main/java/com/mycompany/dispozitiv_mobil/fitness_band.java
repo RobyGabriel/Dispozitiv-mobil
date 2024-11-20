@@ -14,9 +14,9 @@ public fitness_band() //constructor fara argumente
     this.senzor="";
 }
 
-public fitness_band(String Brand, double marime_ecran, String senzor, double pret) //constructor cu toate argumentele
+public fitness_band(String Brand, double marime_ecran, double pret,int baterie, String senzor) //constructor cu toate argumentele
 {
-    super(Brand, marime_ecran,pret);
+    super(Brand, marime_ecran,pret,baterie);
     this.senzor=senzor;
 }
 
@@ -34,8 +34,6 @@ public String toString() //rescriere toString
 
  public static void main(String[] args)
     {
-     fitness_band test=new fitness_band("Samsung",1.5,"pulsoximetru",700);
-     System.out.println(test);
+
     }
 }
-

@@ -36,15 +36,40 @@ public class Dispozitiv_mobil {
         return "Brand: " + Brand + "\nMarimea ecranului:" + marime_ecran + "\nPret: " + pret + "lei" + "\nMarime Baterie: " + baterie + "mAh";
     }
 
-    public static void main(String[] args) 
-    {
-        Dispozitiv_mobil test1=new Dispozitiv_mobil();
-        Dispozitiv_mobil test2= new Dispozitiv_mobil("Samsung", 7, 999, 5000);
-        Dispozitiv_mobil test3=new Dispozitiv_mobil(test2);
+    public static void main(String[] args) {
+        Telefon testTelefon1 = new Telefon("Samsung", 6.6, "a32", 120, "Snapdragon", 4000, 5000);
+        Telefon testTelefon2 = new Telefon();
+        Telefon testTelefon3 = new Telefon(testTelefon1);
+        System.out.print(testTelefon1);
+        System.out.print(testTelefon2);
+        System.out.print(testTelefon3);
+
+        Tableta testTableta1 = new Tableta("Samsung", 6.6, "a32", 120, "Snapdragon", 4000, 5000, false);
+        Tableta testTableta2 = new Tableta();
+        Tableta testTableta3 = new Tableta(testTableta1);
+        System.out.print(testTableta1);
+        System.out.print(testTableta2);
+        System.out.print(testTableta3);
+
+        smartwatch testsmartwatch1 = new smartwatch("Samsung", 2.0, 500, 2000, "Negru", "LCD", "IP68");
+        System.out.println(testsmartwatch1);
+        smartwatch testsmartwatch2 = new smartwatch();
+        System.out.println(testsmartwatch2);
+        smartwatch testsmartwatch3 = new smartwatch(testsmartwatch2);
+        System.out.println(testsmartwatch3);
+        
+        fitness_band testfitness_band1=new fitness_band();
+        fitness_band testfitness_band2= new fitness_band("Samsung", "Galaxy", 1.5, 749, 500, "pulsoximetru", "IP68", 10243, 500, true);
+        fitness_band testfitness_band3=new fitness_band(testfitness_band2);
+        System.out.println(testfitness_band1);
+        System.out.println(testfitness_band2);
+        System.out.println(testfitness_band3);
+        
+        accesorii_fitness test1=new accesorii_fitness();
+        accesorii_fitness test2= new accesorii_fitness("Samsung", 1.5, 600, 2000,"bratara","neagra","magnetica",false,"magnetic");
+        accesorii_fitness test3=new accesorii_fitness(test2);
         System.out.println(test1);
-        System.out.println("\n");
         System.out.println(test2);
-        System.out.println("\n");
         System.out.println(test3);
     }
 }

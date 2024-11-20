@@ -45,8 +45,8 @@ public accesorii_fitness(accesorii_fitness other) //constructor de copiere
 @Override
 public String toString() //rescriere toString
 {   if(curea_ajustabila=true)
-    return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nPret: " + pret + "\nTip accesoriu: " + tip_accesoriu + "\nCuloare bratara: " + culoare_bratara + "\nTip catarama bratara: " + tip_catarama_bratara + "\nCurea ajustabila: Da" + "\nTip incarcator: " + tip_incarcator;
-else return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nPret: " + pret + "\nTip accesoriu: " + tip_accesoriu + "\nCuloare bratara: " + culoare_bratara + "\nTip catarama bratara: " + tip_catarama_bratara + "\nCurea ajustabila: Nu" + "\nTip incarcator: " + tip_incarcator;
+    return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nPret: " + pret + "\nTip accesoriu: " + tip_accesoriu + "\nCuloare bratara: " + culoare_bratara + "\nTip catarama bratara: " + tip_catarama_bratara + "\nCurea ajustabila: Da" + "\nTip incarcator: " + tip_incarcator + "\n";
+else return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nPret: " + pret + "\nTip accesoriu: " + tip_accesoriu + "\nCuloare bratara: " + culoare_bratara + "\nTip catarama bratara: " + tip_catarama_bratara + "\nCurea ajustabila: Nu" + "\nTip incarcator: " + tip_incarcator + "\n";
 }
 
  public static void main(String[] args)
@@ -55,9 +55,7 @@ else return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nPret
         accesorii_fitness test2= new accesorii_fitness("Samsung", 1.5, 600, 2000,"bratara","neagra","magnetica",false,"magnetic");
         accesorii_fitness test3=new accesorii_fitness(test2);
         System.out.println(test1);
-        System.out.println("\n");
         System.out.println(test2);
-        System.out.println("\n");
         System.out.println(test3);
     }
 }

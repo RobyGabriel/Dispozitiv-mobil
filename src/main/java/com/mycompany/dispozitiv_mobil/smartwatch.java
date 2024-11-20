@@ -30,7 +30,7 @@ public class smartwatch extends Dispozitiv_mobil{
     @Override
 public String toString() //rescriere toString
 {
-    return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nPret: " + pret + "\nBaterie: " + baterie+"\nCuloare: "+culoare+"\nTip Ecran: "+tip_ecran+"\nRezistenta la Apa: "+rez_apa;
+    return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nPret: " + pret + "\nBaterie: " + baterie+"\nCuloare: "+culoare+"\nTip Ecran: "+tip_ecran+"\nRezistenta la Apa: "+rez_apa+"\n";
 }
 
  public static void main(String[] args)

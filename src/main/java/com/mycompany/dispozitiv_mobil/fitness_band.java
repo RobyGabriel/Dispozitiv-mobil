@@ -50,8 +50,8 @@ public fitness_band(fitness_band other) //constructor de copiere
 public String toString() //rescriere toString
 {
     if(monitorizare_somn=true)
-    return "Brand: " + Brand + "\nModel: " + model + "\nMarimea ecranului: " + marime_ecran + " inch" + "\nBaterie: " + baterie + " mAh" + "\nSenzor: " + senzor + "\nPret: " + pret + "lei" + "\nRezistenta apa: " + rezistenta_apa + "\nPasi inregistrati " + pasi_inregistrati + "\nCalorii arse: " + calorii_arse + "\nMonitorizare somn: Da";
-    else return "Brand: " + Brand + "\nModel: " + model + "\nMarimea ecranului: " + marime_ecran + " inch" + "\nBaterie: " + baterie + " mAh" + "\nSenzor: " + senzor + "\nPret: " + pret + "lei" + "\nRezistenta apa: " + rezistenta_apa + "\nPasi inregistrati " + pasi_inregistrati + "\nCalorii arse: " + calorii_arse + "\nMonitorizare somn: Nu";
+    return "Brand: " + Brand + "\nModel: " + model + "\nMarimea ecranului: " + marime_ecran + " inch" + "\nBaterie: " + baterie + " mAh" + "\nSenzor: " + senzor + "\nPret: " + pret + "lei" + "\nRezistenta apa: " + rezistenta_apa + "\nPasi inregistrati " + pasi_inregistrati + "\nCalorii arse: " + calorii_arse + "\nMonitorizare somn: Da\n";
+    else return "Brand: " + Brand + "\nModel: " + model + "\nMarimea ecranului: " + marime_ecran + " inch" + "\nBaterie: " + baterie + " mAh" + "\nSenzor: " + senzor + "\nPret: " + pret + "lei" + "\nRezistenta apa: " + rezistenta_apa + "\nPasi inregistrati " + pasi_inregistrati + "\nCalorii arse: " + calorii_arse + "\nMonitorizare somn: Nu\n";
 
 }
 
@@ -61,9 +61,7 @@ public String toString() //rescriere toString
         fitness_band test2= new fitness_band("Samsung", "Galaxy", 1.5, 749, 500, "pulsoximetru", "IP68", 10243, 500, true);
         fitness_band test3=new fitness_band(test2);
         System.out.println(test1);
-        System.out.println("\n");
         System.out.println(test2);
-        System.out.println("\n");
         System.out.println(test3);
     }
 }

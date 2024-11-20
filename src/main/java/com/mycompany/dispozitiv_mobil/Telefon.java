@@ -20,7 +20,9 @@ public Telefon(String brand, int marime_ecran,int camera, String procesor){ //co
     this.camera=camera;
 }
 
-public Telefon(Dispozitiv_mobil other){ //constructor de copiere
-    
+public Telefon(Telefon a){ //constructor de copiere
+    super(a);
+    this.procesor=a.procesor;
+    this.camera=a.camera;
 }
 }

@@ -5,6 +5,6 @@ int marime_ecran;
 String Brand;
     public static void main(String[] args)
     {
-       String brand;
+     
     }
 }

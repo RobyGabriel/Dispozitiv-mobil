@@ -1,13 +1,8 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+Ichim Ionut
+*/
 package com.mycompany.dispozitiv_mobil;
-
-/**
- *
- * @author ichim
- */
 public class Telefon extends Dispozitiv_mobil {
-    int marime_ecran;
+    String procesor;
+    int camera;
 }

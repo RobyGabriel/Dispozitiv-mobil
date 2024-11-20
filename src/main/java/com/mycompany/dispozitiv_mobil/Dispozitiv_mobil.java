@@ -17,13 +17,13 @@ public Dispozitiv_mobil(int marime_ecran, String Brand) //constructor cu toate a
     this.Brand=Brand;
 }
 
-public Dispozitiv_mobil(Dispozitiv_mobil other)
+public Dispozitiv_mobil(Dispozitiv_mobil other) //constructor de copiere
 {
 this.marime_ecran=other.marime_ecran;
 this.Brand=other.Brand;
 }
 
-public String toString()
+public String toString() //rescriere toString
 {
     return "Brand: " + Brand + "/nMarimea ecranului:" + marime_ecran;
 }

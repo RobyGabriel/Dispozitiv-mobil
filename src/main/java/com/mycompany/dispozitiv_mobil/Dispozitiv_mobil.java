@@ -6,10 +6,10 @@ String Brand;
 int marime_ecran;
 
 public Dispozitiv_mobil() //constructor fara argumente
-        {
-            this.marime_ecran=0;
-            this.Brand="";
-        }
+{
+    this.marime_ecran=0;
+    this.Brand="";
+}
 
 public Dispozitiv_mobil(int marime_ecran, String Brand) //constructor cu toate argumentele
 {
@@ -19,8 +19,8 @@ public Dispozitiv_mobil(int marime_ecran, String Brand) //constructor cu toate a
 
 public Dispozitiv_mobil(Dispozitiv_mobil other) //constructor de copiere
 {
-this.marime_ecran=other.marime_ecran;
-this.Brand=other.Brand;
+    this.marime_ecran=other.marime_ecran;
+    this.Brand=other.Brand;
 }
 
 public String toString() //rescriere toString

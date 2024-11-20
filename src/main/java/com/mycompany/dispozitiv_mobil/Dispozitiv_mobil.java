@@ -4,6 +4,6 @@ public class Dispozitiv_mobil {
 
     public static void main(String[] args)
     {
-        
+       
     }
 }

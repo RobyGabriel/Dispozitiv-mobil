@@ -9,5 +9,5 @@ package com.mycompany.dispozitiv_mobil;
  * @author ichim
  */
 public class Telefon {
-    
+    int marime_ecran;
 }

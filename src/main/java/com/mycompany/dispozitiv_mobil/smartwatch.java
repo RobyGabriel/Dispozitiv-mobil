@@ -37,5 +37,10 @@ public String toString() //rescriere toString
     {
      smartwatch test=new smartwatch("Samsung",2.0,500,2000,"Negru","LCD","IP68");
      System.out.println(test);
+     smartwatch test2=new smartwatch();
+     System.out.println(test2);
+     smartwatch test3=new smartwatch(test);
+     System.out.println(test3);
+     
     }
 }

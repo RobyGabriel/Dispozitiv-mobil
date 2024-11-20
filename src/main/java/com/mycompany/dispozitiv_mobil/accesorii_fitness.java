@@ -8,34 +8,52 @@ public class accesorii_fitness extends Dispozitiv_mobil
 {
     String tip_accesoriu;
     String culoare_bratara;
+    String tip_catarama_bratara;
+    boolean curea_ajustabila;
     
     public accesorii_fitness() //constructor fara argumente
 {
     super();
     this.tip_accesoriu="";
     this.culoare_bratara="";
+    this.tip_catarama_bratara="";
+    this.curea_ajustabila=false;
 }
 
-public accesorii_fitness(String Brand, double marime_ecran, double pret, int baterie, String tip_accesoriu, String culoare_bratara) //constructor cu toate argumentele
+public accesorii_fitness(String Brand, double marime_ecran, double pret, int baterie, String tip_accesoriu, String culoare_bratara, String tip_catarama_bratara, boolean curea_ajustabila) //constructor cu toate argumentele
 {
-    super(Brand, marime_ecran,pret,baterie);
+    super(Brand,marime_ecran,pret,baterie);
     this.tip_accesoriu=tip_accesoriu;
     this.culoare_bratara=culoare_bratara;
+    this.tip_catarama_bratara=tip_catarama_bratara;
+    this.curea_ajustabila=curea_ajustabila;
 }
 
-public accesorii_fitness(fitness_band other) //constructor de copiere
+public accesorii_fitness(accesorii_fitness other) //constructor de copiere
 {
     super(other);
+    this.tip_accesoriu=other.tip_accesoriu;
+    this.culoare_bratara=other.culoare_bratara;
+    this.tip_catarama_bratara=other.tip_catarama_bratara;
+    this.curea_ajustabila=other.curea_ajustabila;
 }
 
 @Override
 public String toString() //rescriere toString
-{
-    return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nPret: " + pret + "Tip accesoriu: " + tip_accesoriu + "Culoare bratara: " + culoare_bratara;
+{   if(curea_ajustabila)
+    return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nPret: " + pret + "\nTip accesoriu: " + tip_accesoriu + "\nCuloare bratara: " + culoare_bratara + "\nTip catarama bratara: " + tip_catarama_bratara + "\nCurea ajustabila: Da";
+else return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nPret: " + pret + "\nTip accesoriu: " + tip_accesoriu + "\nCuloare bratara: " + culoare_bratara + "\nTip catarama bratara: " + tip_catarama_bratara + "\nCurea ajustabila: Nu";
 }
 
  public static void main(String[] args)
     {
-        
+        accesorii_fitness test1=new accesorii_fitness();
+        accesorii_fitness test2= new accesorii_fitness("Samsung", 1.5, 600, 2000,"bratara","neagra","magnetica",false);
+        accesorii_fitness test3=new accesorii_fitness(test2);
+        System.out.println(test1);
+        System.out.println("\n");
+        System.out.println(test2);
+        System.out.println("\n");
+        System.out.println(test3);
     }
 }

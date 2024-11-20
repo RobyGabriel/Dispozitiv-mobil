@@ -33,10 +33,18 @@ public class Dispozitiv_mobil {
 
     public String toString() //rescriere toString
     {
-        return "Brand: " + Brand + "\nMarimea ecranului:" + marime_ecran + "\nPret: " + pret + "\nMarime Baterie: " + baterie;
+        return "Brand: " + Brand + "\nMarimea ecranului:" + marime_ecran + "\nPret: " + pret + "lei" + "\nMarime Baterie: " + baterie + "mAh";
     }
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) 
+    {
+        Dispozitiv_mobil test1=new Dispozitiv_mobil();
+        Dispozitiv_mobil test2= new Dispozitiv_mobil("Samsung", 7, 999, 5000);
+        Dispozitiv_mobil test3=new Dispozitiv_mobil(test2);
+        System.out.println(test1);
+        System.out.println("\n");
+        System.out.println(test2);
+        System.out.println("\n");
+        System.out.println(test3);
     }
 }

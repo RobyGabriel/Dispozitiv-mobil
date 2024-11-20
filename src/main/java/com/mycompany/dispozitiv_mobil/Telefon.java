@@ -8,6 +8,6 @@ package com.mycompany.dispozitiv_mobil;
  *
  * @author ichim
  */
-public class Telefon {
+public class Telefon extends Dispozitiv_mobil {
     int marime_ecran;
 }

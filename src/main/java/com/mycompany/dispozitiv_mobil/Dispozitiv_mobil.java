@@ -4,7 +4,7 @@ public class Dispozitiv_mobil {
 
 String Brand;
 double marime_ecran;
-int pret;
+double pret;
 
 public Dispozitiv_mobil() //constructor fara argumente
 {
@@ -13,7 +13,7 @@ public Dispozitiv_mobil() //constructor fara argumente
     this.pret=0;
 }
 
-public Dispozitiv_mobil(String Brand, double marime_ecran, int pret) //constructor cu toate argumentele
+public Dispozitiv_mobil(String Brand, double marime_ecran, double pret) //constructor cu toate argumentele
 {
     this.marime_ecran=marime_ecran;
     this.Brand=Brand;

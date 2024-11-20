@@ -14,7 +14,7 @@ public fitness_band() //constructor fara argumente
     this.senzor="";
 }
 
-public fitness_band(String Brand, double marime_ecran, String senzor, int pret) //constructor cu toate argumentele
+public fitness_band(String Brand, double marime_ecran, String senzor, double pret) //constructor cu toate argumentele
 {
     super(Brand, marime_ecran,pret);
     this.senzor=senzor;

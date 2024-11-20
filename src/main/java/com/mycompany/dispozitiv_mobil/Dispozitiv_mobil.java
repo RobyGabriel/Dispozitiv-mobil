@@ -11,7 +11,7 @@ public Dispozitiv_mobil() //constructor fara argumente
     this.Brand="";
 }
 
-public Dispozitiv_mobil(int marime_ecran, String Brand) //constructor cu toate argumentele
+public Dispozitiv_mobil(String Brand, int marime_ecran) //constructor cu toate argumentele
 {
     this.marime_ecran=marime_ecran;
     this.Brand=Brand;

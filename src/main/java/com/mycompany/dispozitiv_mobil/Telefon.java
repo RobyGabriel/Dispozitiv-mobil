@@ -15,7 +15,9 @@ public class Telefon extends Dispozitiv_mobil {
     }//constructor fara argumente
 
 public Telefon(String brand, int marime_ecran,int camera, String procesor){ //constructor cu toate argumentele
-    super(marime_ecran,brand);
+    super(brand,marime_ecran);
+    this.procesor=procesor;
+    
 }
 
 public Telefon(Dispozitiv_mobil other){ //constructor de copiere

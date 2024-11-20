@@ -65,11 +65,11 @@ public class Dispozitiv_mobil {
         System.out.println(testfitness_band2);
         System.out.println(testfitness_band3);
         
-        accesorii_fitness test1=new accesorii_fitness();
-        accesorii_fitness test2= new accesorii_fitness("Samsung", 1.5, 600, 2000,"bratara","neagra","magnetica",false,"magnetic");
-        accesorii_fitness test3=new accesorii_fitness(test2);
-        System.out.println(test1);
-        System.out.println(test2);
-        System.out.println(test3);
+        accesorii_fitness testaccesorii_fitness1=new accesorii_fitness();
+        accesorii_fitness testaccesorii_fitness2= new accesorii_fitness("Samsung", 1.5, 600, 2000,"bratara","neagra","magnetica",false,"magnetic");
+        accesorii_fitness testaccesorii_fitness3=new accesorii_fitness(testaccesorii_fitness2);
+        System.out.println(testaccesorii_fitness1);
+        System.out.println(testaccesorii_fitness2);
+        System.out.println(testaccesorii_fitness3);
     }
 }

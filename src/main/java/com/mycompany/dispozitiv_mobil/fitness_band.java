@@ -7,4 +7,5 @@ package com.mycompany.dispozitiv_mobil;
 public class fitness_band 
 {
     int fitness;
+    int bratara;
 }

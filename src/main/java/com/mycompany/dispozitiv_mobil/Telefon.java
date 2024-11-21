@@ -8,6 +8,7 @@ public class Telefon extends Dispozitiv_mobil {
     String procesor;
     String model;
     int camera;
+    String display;
     //constructor fara argumente
 public Telefon(){
     super();
@@ -16,11 +17,12 @@ public Telefon(){
     camera=0;
     }
      //constructor cu toate argumentele
-public Telefon(String brand, double marime_ecran, String model, int camera, String procesor, double pret, int baterie){
+public Telefon(String brand, double marime_ecran, String model, int camera, String procesor, double pret, int baterie, String display){
     super(brand,marime_ecran,pret,baterie);
     this.model=model;
     this.procesor=procesor;
     this.camera=camera;
+    this.display=display;
 }
      //constructor de copiere
 public Telefon(Telefon a){
@@ -28,13 +30,14 @@ public Telefon(Telefon a){
     this.model=a.model;
     this.procesor=a.procesor;
     this.camera=a.camera;
+    this.display=a.display;
 }
     //Metoda toString
 public String toString(){
-    return "\nBrand " + Brand + " " + model+ "\nProcesor " + procesor + "\nMarime_ecran "+marime_ecran+" inch"+"\nCamera "+camera+ "\nBaterie "+baterie+ " mAh"+ "\nPret "+pret+"lei\n";
+    return "\nBrand " + Brand + " " + model+ "\nProcesor " + procesor + "\nMarime_ecran "+marime_ecran+" inch"+"\nCamera "+camera+ "\nBaterie "+baterie+ " mAh"+ "\nPret "+pret+"lei\n"+"Display " + display+"\n";
 }
 public static void main(String[] args) {
-        Telefon test= new Telefon("Samsung",6.6,"a32",120,"Snapdragon",4000,5000);
+        Telefon test= new Telefon("Samsung",6.6,"a32",120,"Snapdragon",4000,5000,"SuperAmoled");
         Telefon test2= new Telefon();
         Telefon test3= new Telefon(test);
         System.out.print(test);

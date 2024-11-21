@@ -37,14 +37,14 @@ public class Dispozitiv_mobil {
     }
 
     public static void main(String[] args) {
-        Telefon testTelefon1 = new Telefon("Samsung", 6.6, "a32", 120, "Snapdragon", 4000, 5000);
+        Telefon testTelefon1 = new Telefon("Samsung", 6.6, "a32", 120, "Snapdragon", 4000, 5000,"SuperAMOLED");
         Telefon testTelefon2 = new Telefon();
         Telefon testTelefon3 = new Telefon(testTelefon1);
         System.out.print(testTelefon1);
         System.out.print(testTelefon2);
         System.out.print(testTelefon3);
 
-        Tableta testTableta1 = new Tableta("Samsung", 6.6, "a32", 120, "Snapdragon", 4000, 5000, false);
+        Tableta testTableta1 = new Tableta("Samsung", 6.6, "a32", 120, "Snapdragon", 4000, 5000, false,"Amoled");
         Tableta testTableta2 = new Tableta();
         Tableta testTableta3 = new Tableta(testTableta1);
         System.out.print(testTableta1);
@@ -71,5 +71,12 @@ public class Dispozitiv_mobil {
         System.out.println(testaccesorii_fitness1);
         System.out.println(testaccesorii_fitness2);
         System.out.println(testaccesorii_fitness3);
+        
+        acsmartwatch testacsmartwatch1=new acsmartwatch();
+        acsmartwatch testacsmartwatch2 = new acsmartwatch("Samsung", 2.0, 500, 2000, "Husa,Incarcator,Bratara","Silicon");
+        acsmartwatch testacsmartwatch3= new acsmartwatch(testacsmartwatch2);
+        System.out.println(testacsmartwatch1);
+        System.out.println(testacsmartwatch2);
+        System.out.println(testacsmartwatch3);
     }
 }

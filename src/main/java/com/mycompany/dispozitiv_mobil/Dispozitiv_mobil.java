@@ -1,12 +1,13 @@
 package com.mycompany.dispozitiv_mobil;
 
-public class Dispozitiv_mobil {
+public class Dispozitiv_mobil implements InterfataDispozitive {
 
-    String Brand;
-    double marime_ecran;
-    double pret;
-    int baterie;
-
+    protected String Brand;
+    protected double marime_ecran;
+    protected double pret;
+    protected int baterie;
+    final int TVA=10;
+    protected double pretTVA;
     public Dispozitiv_mobil() //constructor fara argumente
     {
         this.marime_ecran = 0;
@@ -34,6 +35,14 @@ public class Dispozitiv_mobil {
     public String toString() //rescriere toString
     {
         return "Brand: " + Brand + "\nMarimea ecranului:" + marime_ecran + "\nPret: " + pret + "lei" + "\nMarime Baterie: " + baterie + "mAh";
+    }
+    @Override
+    public double calcularePret(){
+        return pret*((pret*TVA)/100);
+    }
+        public void pretDupaTVA() {
+        pretTVA = pret * ((pret * TVA) / 100);
+        System.out.println(pretTVA);
     }
 
     public static void main(String[] args) {

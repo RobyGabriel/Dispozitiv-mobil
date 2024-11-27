@@ -8,31 +8,31 @@ public class fitness_band extends Dispozitiv_mobil
 {
     String model;
     String senzor;
-    String rezistenta_apa;
-    int pasi_inregistrati;
-    int calorii_arse;
-    boolean monitorizare_somn;
+    String rezistentaApa;
+    int pasiInregistrati;
+    int caloriiArse;
+    boolean monitorizareSomn;
 
 public fitness_band() //constructor fara argumente
 {
     super();
     this.model="";
     this.senzor="";
-    this.rezistenta_apa="";
-    this.pasi_inregistrati=0;
-    this.calorii_arse=0;
-    this.monitorizare_somn=false;
+    this.rezistentaApa="";
+    this.pasiInregistrati=0;
+    this.caloriiArse=0;
+    this.monitorizareSomn=false;
 }
 
-public fitness_band(String Brand, String model, double marime_ecran, double pret, int baterie, String senzor, String rezistenta_apa, int pasi_inregistrati, int calorii_arse, boolean monitorizare_somn) //constructor cu toate argumentele
+public fitness_band(String Brand, String model, double marime_ecran, double pret, int baterie, String senzor, String rezistentaApa, int pasiInregistrati, int caloriiArse, boolean monitorizareSomn) //constructor cu toate argumentele
 {
     super(Brand, marime_ecran,pret,baterie);
     this.model=model;
     this.senzor=senzor;
-    this.rezistenta_apa=rezistenta_apa;
-    this.pasi_inregistrati=pasi_inregistrati;
-    this.calorii_arse=calorii_arse;
-    this.monitorizare_somn=monitorizare_somn;
+    this.rezistentaApa=rezistentaApa;
+    this.pasiInregistrati=pasiInregistrati;
+    this.caloriiArse=caloriiArse;
+    this.monitorizareSomn=monitorizareSomn;
 }
 
 public fitness_band(fitness_band other) //constructor de copiere
@@ -40,19 +40,16 @@ public fitness_band(fitness_band other) //constructor de copiere
     super(other);
     this.model=other.model;
     this.senzor=other.senzor;
-    this.rezistenta_apa=other.rezistenta_apa;
-    this.pasi_inregistrati=other.pasi_inregistrati;
-    this.calorii_arse=other.calorii_arse;
-    this.monitorizare_somn=other.monitorizare_somn;
+    this.rezistentaApa=other.rezistentaApa;
+    this.pasiInregistrati=other.pasiInregistrati;
+    this.caloriiArse=other.caloriiArse;
+    this.monitorizareSomn=other.monitorizareSomn;
 }
 
 @Override
 public String toString() //rescriere toString
 {
-    if(monitorizare_somn==true)
-    return "Brand: " + Brand + "\nModel: " + model + "\nMarimea ecranului: " + marime_ecran + " inch" + "\nBaterie: " + baterie + " mAh" + "\nSenzor: " + senzor + "\nPret: " + pret + "lei" + "\nRezistenta apa: " + rezistenta_apa + "\nPasi inregistrati " + pasi_inregistrati + "\nCalorii arse: " + calorii_arse + "\nMonitorizare somn: Da\n";
-    else return "Brand: " + Brand + "\nModel: " + model + "\nMarimea ecranului: " + marime_ecran + " inch" + "\nBaterie: " + baterie + " mAh" + "\nSenzor: " + senzor + "\nPret: " + pret + "lei" + "\nRezistenta apa: " + rezistenta_apa + "\nPasi inregistrati " + pasi_inregistrati + "\nCalorii arse: " + calorii_arse + "\nMonitorizare somn: Nu\n";
-
+    return "Brand: " + Brand + "\nModel: " + model + "\nMarimea ecranului: " + marime_ecran + " inch" + "\nBaterie: " + baterie + " mAh" + "\nSenzor: " + senzor + "\nPret: " + pret + "lei" + "\nRezistenta apa: " + rezistentaApa + "\nPasi inregistrati " + pasiInregistrati + "\nCalorii arse: " + caloriiArse + "\nMonitorizare somn: " + (monitorizareSomn ? "Da" : "Nu");
 }
 
  public static void main(String[] args)

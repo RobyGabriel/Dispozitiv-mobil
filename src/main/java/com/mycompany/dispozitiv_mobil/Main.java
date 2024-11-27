@@ -80,6 +80,13 @@ public class Main {
         accesoriiSmartwatch.add(new acsmartwatch("Xiaomi", 1.4, 800, 200, "Curea sport", "Husă din silicon", "Magnetic"));
         accesoriiSmartwatch.add(new acsmartwatch("Withings", 1.2, 200, 150, "Curea din piele", "Husă subțire din silicon", "USB-C"));
         accesoriiSmartwatch.add(new acsmartwatch("Polar", 1.3, 550, 180, "Curea sport", "Husă protectoare din plastic", "Magnetic"));
+        
+        System.out.println(telefoane);
+        System.out.println(tablete);
+        System.out.println(fitnessBand);
+        System.out.println(accesoriiFitness);
+        System.out.println(smartwatch);
+        System.out.println(accesoriiSmartwatch);
     }
 
 }

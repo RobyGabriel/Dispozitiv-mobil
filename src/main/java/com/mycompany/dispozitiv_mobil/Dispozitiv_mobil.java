@@ -6,7 +6,7 @@ public class Dispozitiv_mobil implements InterfataDispozitive {
     protected double marimeEcran;
     protected double pret;
     protected int baterie;
-    final int TVA=10;
+    final int TVA=19;
     protected double pretTVA;
     public Dispozitiv_mobil() //constructor fara argumente
     {

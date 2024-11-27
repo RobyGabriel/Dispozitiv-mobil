@@ -10,7 +10,7 @@ public class Tableta extends Dispozitiv_mobil {
     protected boolean tastatura;
     protected String displayTip;
     protected int camera;
-    final int TVA = 13;
+    final int TVA = 19;
     protected double pretTVA;
 
     // Constructor fara argumente

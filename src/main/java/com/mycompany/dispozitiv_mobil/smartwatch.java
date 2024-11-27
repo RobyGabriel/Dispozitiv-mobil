@@ -5,6 +5,8 @@ public class smartwatch extends Dispozitiv_mobil{
     String culoare;
     String tip_ecran;
     String rez_apa;
+    final int TVA=19;
+    protected double pretTVA;
 
     public smartwatch() {
         super();

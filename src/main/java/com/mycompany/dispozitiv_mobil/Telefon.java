@@ -9,7 +9,7 @@ public class Telefon extends Dispozitiv_mobil {
     protected String model;
     protected int camera;
     protected String displayTip;
-    final int TVA = 12;
+    final int TVA = 19;
     protected double pretTVA;
     //constructor fara argumente
 

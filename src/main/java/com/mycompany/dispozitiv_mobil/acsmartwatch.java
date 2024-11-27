@@ -5,6 +5,8 @@ public class acsmartwatch extends Dispozitiv_mobil {
     String tip_accesorii;
     String model_husa;
     String tipIncarcator;
+    final int TVA=19;
+    protected double pretTVA;
 
     public acsmartwatch() //constructor fara argumente
     {

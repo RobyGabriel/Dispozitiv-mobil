@@ -36,6 +36,17 @@ public class acsmartwatch extends Dispozitiv_mobil {
         return "Accesorii: " + tip_accesorii+ "\nModel husa "+model_husa+"\nTip Incarcator: "+tipIncarcator;
 
     }        //rescriere toString
+    
+    @Override
+    public double calcularePret() {
+        pretTVA = pret * ((pret * TVA) / 100);
+        return pretTVA;
+    }
+
+    public void pretDupaTVA() {
+        pretTVA = pret * ((pret * TVA) / 100);
+        System.out.println(pretTVA);
+    }
 
     public static void main(String[] args) {
         acsmartwatch test = new acsmartwatch("Samsung", 2.0, 500, 2000, "Husa,Incarcator,Bratara","Silicon","Tip C");

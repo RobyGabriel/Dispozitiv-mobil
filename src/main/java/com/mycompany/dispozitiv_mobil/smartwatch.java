@@ -35,6 +35,17 @@ public String toString() //rescriere toString
     return "Brand: " + Brand + "\nMarimea ecranului: " + marimeEcran + "\nPret: " + pret + "\nBaterie: " + baterie+"\nCuloare: "+culoare+"\nTip Ecran: "+tip_ecran+"\nRezistenta la Apa: "+rez_apa+"\n";
 }
 
+@Override
+    public double calcularePret() {
+        pretTVA = pret * ((pret * TVA) / 100);
+        return pretTVA;
+    }
+
+    public void pretDupaTVA() {
+        pretTVA = pret * ((pret * TVA) / 100);
+        System.out.println(pretTVA);
+    }
+
  public static void main(String[] args)
     {
      smartwatch test=new smartwatch("Samsung",2.0,500,2000,"Negru","LCD","IP68");

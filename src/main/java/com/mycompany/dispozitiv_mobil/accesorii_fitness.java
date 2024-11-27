@@ -50,6 +50,17 @@ public String toString() //rescriere toString
     return "Brand: " + Brand + "\nMarimea ecranului: " + marimeEcran + "\nPret: " + pret + "\nTip accesoriu: " + tipAccesoriu + "\nCuloare bratara: " + culoareBratara + "\nTip catarama bratara: " + tipCataramaBratara + "\nCurea ajustabila: " + (cureaAjustabila ? "Da" : "Nu") + "\nTip incarcator: " + tipIncarcator + "\n";
 }
 
+@Override
+    public double calcularePret() {
+        pretTVA = pret * ((pret * TVA) / 100);
+        return pretTVA;
+    }
+
+    public void pretDupaTVA() {
+        pretTVA = pret * ((pret * TVA) / 100);
+        System.out.println(pretTVA);
+    }
+
  public static void main(String[] args)
     {
         accesorii_fitness test1=new accesorii_fitness();

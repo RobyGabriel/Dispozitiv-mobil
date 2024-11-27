@@ -54,6 +54,17 @@ public String toString() //rescriere toString
     return "Brand: " + Brand + "\nModel: " + model + "\nMarimea ecranului: " + marimeEcran + " inch" + "\nBaterie: " + baterie + " mAh" + "\nSenzor: " + senzor + "\nPret: " + pret + "lei" + "\nRezistenta apa: " + rezistentaApa + "\nPasi inregistrati " + pasiInregistrati + "\nCalorii arse: " + caloriiArse + "\nMonitorizare somn: " + (monitorizareSomn ? "Da\n" : "Nu\n");
 }
 
+@Override
+    public double calcularePret() {
+        pretTVA = pret * ((pret * TVA) / 100);
+        return pretTVA;
+    }
+
+    public void pretDupaTVA() {
+        pretTVA = pret * ((pret * TVA) / 100);
+        System.out.println(pretTVA);
+    }
+
  public static void main(String[] args)
     {
         fitness_band test1=new fitness_band();

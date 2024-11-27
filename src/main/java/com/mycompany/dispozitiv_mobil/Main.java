@@ -55,31 +55,31 @@ public class Main {
         accesoriiFitness.add(new accesorii_fitness("Amazfit", 1.1, 400, 1400, "brățară sport simplă", "albă", "elastică", true, "USB-C"));
         accesoriiFitness.add(new accesorii_fitness("Realme", 1.3, 250, 1000, "brățară sport", "neagră", "cu cataramă", false, "microUSB"));
         
-        ArrayList<smartwatch> ceasuri = new ArrayList<>();
+        ArrayList<smartwatch> smartwatch = new ArrayList<>();
 
-        ceasuri.add(new smartwatch("Apple", 1.78, 3500, 300, "Negru", "OLED", "IP68"));
-        ceasuri.add(new smartwatch("Samsung", 1.4, 1500, 200, "Albastru", "AMOLED", "5ATM"));
-        ceasuri.add(new smartwatch("Garmin", 1.3, 700, 180, "Verde", "MIP", "10ATM"));
-        ceasuri.add(new smartwatch("Fossil", 1.5, 1200, 250, "Argintiu", "AMOLED", "IP67"));
-        ceasuri.add(new smartwatch("Huawei", 1.6, 1200, 350, "Negru", "AMOLED", "5ATM"));
-        ceasuri.add(new smartwatch("Fitbit", 1.45, 600, 150, "Roșu", "OLED", "IP68"));
-        ceasuri.add(new smartwatch("Amazfit", 1.39, 700, 180, "Albastru", "AMOLED", "5ATM"));
-        ceasuri.add(new smartwatch("Xiaomi", 1.4, 800, 200, "Gri", "AMOLED", "5ATM"));
-        ceasuri.add(new smartwatch("Withings", 1.2, 200, 150, "Alb", "OLED", "IP68"));
-        ceasuri.add(new smartwatch("Polar", 1.3, 550, 180, "Negru", "MIP", "5ATM"));
+        smartwatch.add(new smartwatch("Apple", 1.78, 3500, 300, "Negru", "OLED", "IP68"));
+        smartwatch.add(new smartwatch("Samsung", 1.4, 1500, 200, "Albastru", "AMOLED", "5ATM"));
+        smartwatch.add(new smartwatch("Garmin", 1.3, 700, 180, "Verde", "MIP", "10ATM"));
+        smartwatch.add(new smartwatch("Fossil", 1.5, 1200, 250, "Argintiu", "AMOLED", "IP67"));
+        smartwatch.add(new smartwatch("Huawei", 1.6, 1200, 350, "Negru", "AMOLED", "5ATM"));
+        smartwatch.add(new smartwatch("Fitbit", 1.45, 600, 150, "Roșu", "OLED", "IP68"));
+        smartwatch.add(new smartwatch("Amazfit", 1.39, 700, 180, "Albastru", "AMOLED", "5ATM"));
+        smartwatch.add(new smartwatch("Xiaomi", 1.4, 800, 200, "Gri", "AMOLED", "5ATM"));
+        smartwatch.add(new smartwatch("Withings", 1.2, 200, 150, "Alb", "OLED", "IP68"));
+        smartwatch.add(new smartwatch("Polar", 1.3, 550, 180, "Negru", "MIP", "5ATM"));
         
-        ArrayList<acsmartwatch> ceasuriAccesorii = new ArrayList<>();
+        ArrayList<acsmartwatch> accesoriiSmartwatch = new ArrayList<>();
 
-        ceasuriAccesorii.add(new acsmartwatch("Apple", 1.78, 3500, 300, "Curea silicon", "Husă protectoare din silicon", "Magnetic"));
-        ceasuriAccesorii.add(new acsmartwatch("Samsung", 1.4, 1500, 200, "Curea din piele", "Husă din plastic", "Qi Wireless"));
-        ceasuriAccesorii.add(new acsmartwatch("Garmin", 1.3, 700, 180, "Curea din metal", "Husă de protecție din silicon", "USB-C"));
-        ceasuriAccesorii.add(new acsmartwatch("Fossil", 1.5, 1200, 250, "Curea textilă", "Husă din piele", "Wireless"));
-        ceasuriAccesorii.add(new acsmartwatch("Huawei", 1.6, 1200, 350, "Curea sport", "Husă protectoare", "Magnetic"));
-        ceasuriAccesorii.add(new acsmartwatch("Fitbit", 1.45, 600, 150, "Curea silicon", "Husă transparentă", "USB-A"));
-        ceasuriAccesorii.add(new acsmartwatch("Amazfit", 1.39, 700, 180, "Curea din piele", "Husă de protecție din silicon", "Wireless"));
-        ceasuriAccesorii.add(new acsmartwatch("Xiaomi", 1.4, 800, 200, "Curea sport", "Husă din silicon", "Magnetic"));
-        ceasuriAccesorii.add(new acsmartwatch("Withings", 1.2, 200, 150, "Curea din piele", "Husă subțire din silicon", "USB-C"));
-        ceasuriAccesorii.add(new acsmartwatch("Polar", 1.3, 550, 180, "Curea sport", "Husă protectoare din plastic", "Magnetic"));
+        accesoriiSmartwatch.add(new acsmartwatch("Apple", 1.78, 3500, 300, "Curea silicon", "Husă protectoare din silicon", "Magnetic"));
+        accesoriiSmartwatch.add(new acsmartwatch("Samsung", 1.4, 1500, 200, "Curea din piele", "Husă din plastic", "Qi Wireless"));
+        accesoriiSmartwatch.add(new acsmartwatch("Garmin", 1.3, 700, 180, "Curea din metal", "Husă de protecție din silicon", "USB-C"));
+        accesoriiSmartwatch.add(new acsmartwatch("Fossil", 1.5, 1200, 250, "Curea textilă", "Husă din piele", "Wireless"));
+        accesoriiSmartwatch.add(new acsmartwatch("Huawei", 1.6, 1200, 350, "Curea sport", "Husă protectoare", "Magnetic"));
+        accesoriiSmartwatch.add(new acsmartwatch("Fitbit", 1.45, 600, 150, "Curea silicon", "Husă transparentă", "USB-A"));
+        accesoriiSmartwatch.add(new acsmartwatch("Amazfit", 1.39, 700, 180, "Curea din piele", "Husă de protecție din silicon", "Wireless"));
+        accesoriiSmartwatch.add(new acsmartwatch("Xiaomi", 1.4, 800, 200, "Curea sport", "Husă din silicon", "Magnetic"));
+        accesoriiSmartwatch.add(new acsmartwatch("Withings", 1.2, 200, 150, "Curea din piele", "Husă subțire din silicon", "USB-C"));
+        accesoriiSmartwatch.add(new acsmartwatch("Polar", 1.3, 550, 180, "Curea sport", "Husă protectoare din plastic", "Magnetic"));
     }
 
 }

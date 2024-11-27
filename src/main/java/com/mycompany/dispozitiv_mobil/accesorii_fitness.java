@@ -44,6 +44,55 @@ public accesorii_fitness(accesorii_fitness other) //constructor de copiere
     this.tipIncarcator=other.tipIncarcator;
 }
 
+public String getTipAccesoriu() {
+        return tipAccesoriu;
+    }
+
+    // Setter for tipAccesoriu
+    public void setTipAccesoriu(String tipAccesoriu) {
+        this.tipAccesoriu = tipAccesoriu;
+    }
+
+    // Getter for culoareBratara
+    public String getCuloareBratara() {
+        return culoareBratara;
+    }
+
+    // Setter for culoareBratara
+    public void setCuloareBratara(String culoareBratara) {
+        this.culoareBratara = culoareBratara;
+    }
+
+    // Getter for tipCataramaBratara
+    public String getTipCataramaBratara() {
+        return tipCataramaBratara;
+    }
+
+    // Setter for tipCataramaBratara
+    public void setTipCataramaBratara(String tipCataramaBratara) {
+        this.tipCataramaBratara = tipCataramaBratara;
+    }
+
+    // Getter for cureaAjustabila
+    public boolean isCureaAjustabila() {
+        return cureaAjustabila;
+    }
+
+    // Setter for cureaAjustabila
+    public void setCureaAjustabila(boolean cureaAjustabila) {
+        this.cureaAjustabila = cureaAjustabila;
+    }
+
+    // Getter for tipIncarcator
+    public String getTipIncarcator() {
+        return tipIncarcator;
+    }
+
+    // Setter for tipIncarcator
+    public void setTipIncarcator(String tipIncarcator) {
+        this.tipIncarcator = tipIncarcator;
+    }
+
 @Override
 public String toString() //rescriere toString
 {

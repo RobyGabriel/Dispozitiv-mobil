@@ -62,10 +62,9 @@ public class Dispozitiv_mobil implements InterfataDispozitive {
         System.out.print(testTableta3);
 
         smartwatch testsmartwatch1 = new smartwatch("Samsung", 2.0, 500, 2000, "Negru", "LCD", "IP68");
-        System.out.println(testsmartwatch1);
         smartwatch testsmartwatch2 = new smartwatch();
-        System.out.println(testsmartwatch2);
         smartwatch testsmartwatch3 = new smartwatch(testsmartwatch2);
+        System.out.println(testsmartwatch1);
         System.out.println(testsmartwatch3);
         
         fitness_band testfitness_band1=new fitness_band();

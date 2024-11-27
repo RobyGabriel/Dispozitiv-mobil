@@ -6,47 +6,46 @@ package com.mycompany.dispozitiv_mobil;
  */
 public class accesorii_fitness extends Dispozitiv_mobil 
 {
-    String tip_accesoriu;
-    String culoare_bratara;
-    String tip_catarama_bratara;
-    boolean curea_ajustabila;
-    String tip_incarcator;
+    String tipAccesoriu;
+    String culoareBratara;
+    String tipCataramaBratara;
+    boolean cureaAjustabila;
+    String tipIncarcator;
     
     public accesorii_fitness() //constructor fara argumente
 {
     super();
-    this.tip_accesoriu="";
-    this.culoare_bratara="";
-    this.tip_catarama_bratara="";
-    this.curea_ajustabila=false;
-    this.tip_incarcator="";
+    this.tipAccesoriu="";
+    this.culoareBratara="";
+    this.tipCataramaBratara="";
+    this.cureaAjustabila=false;
+    this.tipIncarcator="";
 }
 
-public accesorii_fitness(String Brand, double marime_ecran, double pret, int baterie, String tip_accesoriu, String culoare_bratara, String tip_catarama_bratara, boolean curea_ajustabila, String tip_incarcator) //constructor cu toate argumentele
+public accesorii_fitness(String Brand, double marimeEcran, double pret, int baterie, String tipAccesoriu, String culoareBratara, String tipCataramaBratara, boolean cureaAjustabila, String tipIncarcator) //constructor cu toate argumentele
 {
-    super(Brand,marime_ecran,pret,baterie);
-    this.tip_accesoriu=tip_accesoriu;
-    this.culoare_bratara=culoare_bratara;
-    this.tip_catarama_bratara=tip_catarama_bratara;
-    this.curea_ajustabila=curea_ajustabila;
-    this.tip_incarcator=tip_incarcator;
+    super(Brand,marimeEcran,pret,baterie);
+    this.tipAccesoriu=tipAccesoriu;
+    this.culoareBratara=culoareBratara;
+    this.tipCataramaBratara=tipCataramaBratara;
+    this.cureaAjustabila=cureaAjustabila;
+    this.tipIncarcator=tipIncarcator;
 }
 
 public accesorii_fitness(accesorii_fitness other) //constructor de copiere
 {
     super(other);
-    this.tip_accesoriu=other.tip_accesoriu;
-    this.culoare_bratara=other.culoare_bratara;
-    this.tip_catarama_bratara=other.tip_catarama_bratara;
-    this.curea_ajustabila=other.curea_ajustabila;
-    this.tip_incarcator=other.tip_incarcator;
+    this.tipAccesoriu=other.tipAccesoriu;
+    this.culoareBratara=other.culoareBratara;
+    this.tipCataramaBratara=other.tipCataramaBratara;
+    this.cureaAjustabila=other.cureaAjustabila;
+    this.tipIncarcator=other.tipIncarcator;
 }
 
 @Override
 public String toString() //rescriere toString
-{   if(curea_ajustabila==true)
-    return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nPret: " + pret + "\nTip accesoriu: " + tip_accesoriu + "\nCuloare bratara: " + culoare_bratara + "\nTip catarama bratara: " + tip_catarama_bratara + "\nCurea ajustabila: Da" + "\nTip incarcator: " + tip_incarcator + "\n";
-    else return "Brand: " + Brand + "\nMarimea ecranului: " + marime_ecran + "\nPret: " + pret + "\nTip accesoriu: " + tip_accesoriu + "\nCuloare bratara: " + culoare_bratara + "\nTip catarama bratara: " + tip_catarama_bratara + "\nCurea ajustabila: Nu" + "\nTip incarcator: " + tip_incarcator + "\n";
+{
+    return "Brand: " + Brand + "\nMarimea ecranului: " + marimeEcran + "\nPret: " + pret + "\nTip accesoriu: " + tipAccesoriu + "\nCuloare bratara: " + culoareBratara + "\nTip catarama bratara: " + tipCataramaBratara + "\nCurea ajustabila: " + (cureaAjustabila ? "Da" : "Nu") + "\nTip incarcator: " + tipIncarcator + "\n";
 }
 
  public static void main(String[] args)

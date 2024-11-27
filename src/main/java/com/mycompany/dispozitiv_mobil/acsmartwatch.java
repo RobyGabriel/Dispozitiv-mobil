@@ -12,8 +12,8 @@ public class acsmartwatch extends Dispozitiv_mobil {
         model_husa="";
     }
 
-    public acsmartwatch(String Brand, double marime_ecran, double pret, int baterie, String tip_accesorii,String model_husa) {
-        super(Brand, marime_ecran, pret, baterie);
+    public acsmartwatch(String Brand, double marimeEcran, double pret, int baterie, String tip_accesorii,String model_husa) {
+        super(Brand, marimeEcran, pret, baterie);
         this.tip_accesorii = tip_accesorii;                //constructor cu toate argumentele
         this.model_husa=model_husa;
     }

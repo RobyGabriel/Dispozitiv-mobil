@@ -21,8 +21,8 @@ public class Telefon extends Dispozitiv_mobil {
     }
     //constructor cu toate argumentele
 
-    public Telefon(String brand, double marime_ecran, String model, int camera, String procesor, double pret, int baterie, String displayTip) {
-        super(brand, marime_ecran, pret, baterie);
+    public Telefon(String brand, double marimeEcran, String model, int camera, String procesor, double pret, int baterie, String displayTip) {
+        super(brand, marimeEcran, pret, baterie);
         this.model = model;
         this.procesor = procesor;
         this.camera = camera;
@@ -63,11 +63,11 @@ public class Telefon extends Dispozitiv_mobil {
     }
 
     public double getMarimeEcran() {
-        return marime_ecran;
+        return marimeEcran;
     }
 
     public void setMarimeEcran(double marime_ecran) {
-        this.marime_ecran = marime_ecran;
+        this.marimeEcran = marime_ecran;
     }
 
     public double getPret() {

@@ -13,7 +13,7 @@ public class Tableta extends Dispozitiv_mobil {
     final int TVA = 13;
     protected double pretTVA;
 
-    //constructor fara argumente
+    // Constructor fara argumente
     public Tableta() {
         super();
         procesor = "";
@@ -22,18 +22,18 @@ public class Tableta extends Dispozitiv_mobil {
         tastatura = false;
         displayTip = "";
     }
-    //constructor cu toate argumentele
 
+    // Constructor cu toate argumentele
     public Tableta(String brand, double marimeEcran, String model, int camera, String procesor, double pret, int baterie, boolean tast, String displayTip) {
         super(brand, marimeEcran, pret, baterie);
         this.model = model;
         this.procesor = procesor;
         this.camera = camera;
-        this.tastatura = tastatura;
+        this.tastatura = tast;
         this.displayTip = displayTip;
     }
-    //constructor de copiere
 
+    // Constructor de copiere
     public Tableta(Tableta a) {
         super(a);
         this.model = a.model;
@@ -42,11 +42,14 @@ public class Tableta extends Dispozitiv_mobil {
         this.tastatura = a.tastatura;
         this.displayTip = a.displayTip;
     }
-    //metoda toString
 
+    // Metoda toString
+    @Override
     public String toString() {
-        return super.toString() + " " + model + "\nProcesor " + procesor + " inch" + "\nCamera " + camera + " mAh" + "lei\n" +
-               "Display " + displayTip + "\n" + (tastatura ? "Are tastatura\n " : "Nu are tastatura\n");
+        // Calculăm prețul cu TVA
+        pretTVA = pret + (pret * TVA / 100);
+        return super.toString() + " " + model + "\nProcesor: " + procesor + "\nCamera: " + camera + "MP" + "\nPreț cu TVA: " + pretTVA + " lei\n" 
+                + "Display: " + displayTip + "\n" + (tastatura ? "Are tastatura\n" : "Nu are tastatura\n");
     }
 
     public double calcularePret() {

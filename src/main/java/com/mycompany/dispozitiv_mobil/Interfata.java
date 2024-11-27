@@ -17,8 +17,8 @@ public class Interfata extends JFrame{
         // Create 6 buttons
         JButton telefonButton = new JButton("Telefon");
         JButton tabletaButton = new JButton("Tableta");
-        JButton button3 = new JButton("Fitness Band");
-        JButton button4 = new JButton("Smartwatch");
+        JButton fitnessBandButton = new JButton("Fitness Band");
+        JButton accesoriiFitnessButton = new JButton("Smartwatch");
         JButton button5 = new JButton("Accesorii Fitness");
         JButton button6 = new JButton("Accesorii Smartwatch");
 
@@ -36,15 +36,29 @@ public class Interfata extends JFrame{
                 new TabletaFrame();
             }
         });
+        
+        fitnessBandButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FitnessBandFrame();
+            }
+        });
+        
+        accesoriiFitnessButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new AccesoriiFitnessFrame();
+            }
+        });
 
         // Add buttons to the panel
         panel.add(telefonButton);
         panel.add(Box.createVerticalStrut(100));
         panel.add(tabletaButton);
         panel.add(Box.createVerticalStrut(100));
-        panel.add(button3);
+        panel.add(fitnessBandButton);
         panel.add(Box.createVerticalStrut(100));
-        panel.add(button4);
+        panel.add(accesoriiFitnessButton);
         panel.add(Box.createVerticalStrut(100));
         panel.add(button5);
         panel.add(Box.createVerticalStrut(100));

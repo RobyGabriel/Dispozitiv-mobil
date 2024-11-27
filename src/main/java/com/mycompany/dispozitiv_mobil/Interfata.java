@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 public class Interfata extends JFrame{
     public Interfata() {
         setTitle("Interfata Principala");
-        setSize(1980, 1080);
+        setSize(1000, 800);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
 

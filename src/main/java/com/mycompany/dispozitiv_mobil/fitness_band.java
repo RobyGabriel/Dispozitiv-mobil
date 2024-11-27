@@ -48,62 +48,74 @@ public fitness_band(fitness_band other) //constructor de copiere
     this.monitorizareSomn=other.monitorizareSomn;
 }
 
-public String getModel() {
+public String getModel() 
+{
         return model;
     }
 
     // Setter for model
-    public void setModel(String model) {
+    public void setModel(String model) 
+    {
         this.model = model;
     }
 
     // Getter for senzor
-    public String getSenzor() {
+    public String getSenzor()
+    {
         return senzor;
     }
 
     // Setter for senzor
-    public void setSenzor(String senzor) {
+    public void setSenzor(String senzor)
+    {
         this.senzor = senzor;
     }
 
     // Getter for rezistentaApa
-    public String getRezistentaApa() {
+    public String getRezistentaApa()
+    {
         return rezistentaApa;
     }
 
     // Setter for rezistentaApa
-    public void setRezistentaApa(String rezistentaApa) {
+    public void setRezistentaApa(String rezistentaApa) 
+    {
         this.rezistentaApa = rezistentaApa;
     }
 
     // Getter for pasiInregistrati
-    public int getPasiInregistrati() {
+    public int getPasiInregistrati() 
+    {
         return pasiInregistrati;
     }
 
     // Setter for pasiInregistrati
-    public void setPasiInregistrati(int pasiInregistrati) {
+    public void setPasiInregistrati(int pasiInregistrati)
+    {
         this.pasiInregistrati = pasiInregistrati;
     }
 
     // Getter for caloriiArse
-    public int getCaloriiArse() {
+    public int getCaloriiArse() 
+    {
         return caloriiArse;
     }
 
     // Setter for caloriiArse
-    public void setCaloriiArse(int caloriiArse) {
+    public void setCaloriiArse(int caloriiArse) 
+    {
         this.caloriiArse = caloriiArse;
     }
 
     // Getter for monitorizareSomn
-    public boolean isMonitorizareSomn() {
+    public boolean isMonitorizareSomn() 
+    {
         return monitorizareSomn;
     }
 
     // Setter for monitorizareSomn
-    public void setMonitorizareSomn(boolean monitorizareSomn) {
+    public void setMonitorizareSomn(boolean monitorizareSomn) 
+    {
         this.monitorizareSomn = monitorizareSomn;
     }
     

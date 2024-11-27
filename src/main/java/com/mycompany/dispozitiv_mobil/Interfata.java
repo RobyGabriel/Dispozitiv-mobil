@@ -3,8 +3,14 @@ package com.mycompany.dispozitiv_mobil;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-public class Interfata extends JFrame{
-    public Interfata() {
+import java.util.ArrayList;
+
+public class Interfata extends JFrame {
+    private ArrayList<Telefon> telefoane;
+    private ArrayList<Tableta> tablete;
+    public Interfata(ArrayList<Telefon> telefoane,ArrayList<Tableta> tablete ) {
+        this.telefoane = telefoane;
+        this.tablete=tablete;
         setTitle("Interfata Principala");
         setSize(1000, 800);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -26,14 +32,16 @@ public class Interfata extends JFrame{
         telefonButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new TelefonFrame();
+                dispose();
+                new TelefonFrame(telefoane).setVisible(true); // Pass the list to TelefonFrame
             }
         });
 
         tabletaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new TabletaFrame();
+                dispose();
+                new TabletaFrame(tablete).setVisible(true);
             }
         });
         
@@ -68,8 +76,5 @@ public class Interfata extends JFrame{
         // Add the panel to the frame
         add(panel);
         setVisible(true);
-    }
-        public static void main(String[] args) {
-        Interfata a=new Interfata();
     }
 }

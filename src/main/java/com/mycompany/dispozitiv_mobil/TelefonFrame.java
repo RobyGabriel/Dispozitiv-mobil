@@ -104,7 +104,7 @@ public class TelefonFrame extends JFrame {
             if (!procesor.isEmpty() && !telefon.getProcesor().toLowerCase().contains(procesor)) sePotriveste  = false;
             if (!cameraText.isEmpty() && telefon.getCamera() != Integer.parseInt(cameraText)) sePotriveste  = false;
             if (!displayTip.isEmpty() && !telefon.getdisplayTip().toLowerCase().contains(displayTip)) sePotriveste  = false;
-            if (!ecranText.isEmpty() && telefon.getMarimeEcran() != Double.parseDouble(ecranText)) sePotriveste  = false;
+            if (!ecranText.isEmpty() && telefon.getMarimeEcran() <= Double.parseDouble(ecranText)) sePotriveste  = false;
             if (!pretText.isEmpty() && telefon.getPret() >= Double.parseDouble(pretText)) sePotriveste  = false;
             if (!baterieText.isEmpty() && telefon.getBaterie() != Integer.parseInt(baterieText)) sePotriveste  = false;
 

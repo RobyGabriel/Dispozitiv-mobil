@@ -35,7 +35,7 @@ public class Dispozitiv_mobil implements InterfataDispozitive {
     @Override
     public String toString() //rescriere toString
     {
-        return "Brand: " + Brand + "\nMarimea ecranului:" + marimeEcran + "\nPret: " + pret + "lei" + "\nMarime Baterie: " + baterie + "mAh";
+        return "Brand: " + Brand + "\nMarimea ecranului:" + marimeEcran + "\nPret: " + pret + "lei" + "\nMarime Baterie: " + baterie + "mAh\n";
     }
     @Override
     public double calcularePret(){

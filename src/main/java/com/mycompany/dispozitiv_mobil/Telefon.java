@@ -38,8 +38,8 @@ public class Telefon extends Dispozitiv_mobil {
 
     @Override
     public String toString() {
-        return super.toString() + " " + model + "\nProcesor " + procesor + " inch" + "\nCamera " + camera + " mAh" + "lei\n" +
-               "Display " + displayTip + "\n";
+        return super.toString() + "Model: " + model + "\nProcesor: " + procesor + "\nCamera: " + camera + " MP" 
+               + "\nPreț: " + pret + " lei\n" + "Display: " + displayTip + "\n";
     }
 
     @Override

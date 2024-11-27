@@ -48,7 +48,7 @@ public class Tableta extends Dispozitiv_mobil {
     public String toString() {
         // Calculăm prețul cu TVA
         pretTVA = pret + (pret * TVA / 100);
-        return super.toString() + " " + model + "\nProcesor: " + procesor + "\nCamera: " + camera + "MP" + "\nPreț cu TVA: " + pretTVA + " lei\n" 
+         return super.toString() + "Model: " + model + "\nProcesor: " + procesor + "\nCamera: " + camera + "MP" + "\nPreț: " + pret + " lei\n" 
                 + "Display: " + displayTip + "\n" + (tastatura ? "Are tastatura\n" : "Nu are tastatura\n");
     }
 

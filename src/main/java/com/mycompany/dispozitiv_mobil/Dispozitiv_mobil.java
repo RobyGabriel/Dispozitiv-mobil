@@ -32,6 +32,7 @@ public class Dispozitiv_mobil implements InterfataDispozitive {
         this.baterie = other.baterie;
     }
 
+    @Override
     public String toString() //rescriere toString
     {
         return "Brand: " + Brand + "\nMarimea ecranului:" + marime_ecran + "\nPret: " + pret + "lei" + "\nMarime Baterie: " + baterie + "mAh";

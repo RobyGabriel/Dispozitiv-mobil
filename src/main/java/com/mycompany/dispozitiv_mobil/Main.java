@@ -59,6 +59,15 @@ public class Main {
         accesoriiFitness.add(new accesorii_fitness("Honor", 1.5, 350, 1300, "brățară Honor Band", "roz", "elastică", true, "magnetic"));
         accesoriiFitness.add(new accesorii_fitness("Amazfit", 1.1, 400, 1400, "brățară sport simplă", "albă", "elastică", true, "USB-C"));
         accesoriiFitness.add(new accesorii_fitness("Realme", 1.3, 250, 1000, "brățară sport", "neagră", "cu cataramă", false, "microUSB"));
+        
+        System.out.println(telefoane);
+        System.out.println("\n");
+        System.out.println(tablete);
+        System.out.println("\n");
+        System.out.println(fitnessBand);
+        System.out.println("\n");
+        System.out.println(accesoriiFitness);
+        System.out.println("\n");
     }
 
 }

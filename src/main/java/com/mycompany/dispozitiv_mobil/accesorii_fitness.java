@@ -119,14 +119,4 @@ public String toString() //rescriere toString
         pretTVA = pret * ((pret * TVA) / 100);
         System.out.println(pretTVA);
     }
-
- public static void main(String[] args)
-    {
-        accesorii_fitness test1=new accesorii_fitness();
-        accesorii_fitness test2= new accesorii_fitness("Samsung", 1.5, 600, 2000,"bratara","neagra","magnetica",false,"magnetic");
-        accesorii_fitness test3=new accesorii_fitness(test2);
-        System.out.println(test1);
-        System.out.println(test2);
-        System.out.println(test3);
-    }
 }

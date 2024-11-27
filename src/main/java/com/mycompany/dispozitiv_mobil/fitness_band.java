@@ -135,14 +135,4 @@ public String toString() //rescriere toString
         pretTVA = pret * ((pret * TVA) / 100);
         System.out.println(pretTVA);
     }
-
- public static void main(String[] args)
-    {
-        fitness_band test1=new fitness_band();
-        fitness_band test2= new fitness_band("Samsung", "Galaxy", 1.5, 749, 500, "pulsoximetru", "IP68", 10243, 500, true);
-        fitness_band test3=new fitness_band(test2);
-        System.out.println(test1);
-        System.out.println(test2);
-        System.out.println(test3);
-    }
 }

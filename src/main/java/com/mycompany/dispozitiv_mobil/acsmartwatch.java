@@ -70,9 +70,4 @@ public class acsmartwatch extends Dispozitiv_mobil {
     public void setTipIncarcator(String tipIncarcator) {
         this.tipIncarcator = tipIncarcator;
     }
-
-    public static void main(String[] args) {
-        acsmartwatch test = new acsmartwatch("Samsung", 2.0, 500, 2000, "Husa,Incarcator,Bratara", "Silicon", "Tip C");
-        System.out.println(test);
-    }
 }

@@ -49,7 +49,7 @@ public fitness_band(fitness_band other) //constructor de copiere
 @Override
 public String toString() //rescriere toString
 {
-    if(monitorizare_somn=true)
+    if(monitorizare_somn==true)
     return "Brand: " + Brand + "\nModel: " + model + "\nMarimea ecranului: " + marime_ecran + " inch" + "\nBaterie: " + baterie + " mAh" + "\nSenzor: " + senzor + "\nPret: " + pret + "lei" + "\nRezistenta apa: " + rezistenta_apa + "\nPasi inregistrati " + pasi_inregistrati + "\nCalorii arse: " + calorii_arse + "\nMonitorizare somn: Da\n";
     else return "Brand: " + Brand + "\nModel: " + model + "\nMarimea ecranului: " + marime_ecran + " inch" + "\nBaterie: " + baterie + " mAh" + "\nSenzor: " + senzor + "\nPret: " + pret + "lei" + "\nRezistenta apa: " + rezistenta_apa + "\nPasi inregistrati " + pasi_inregistrati + "\nCalorii arse: " + calorii_arse + "\nMonitorizare somn: Nu\n";
 

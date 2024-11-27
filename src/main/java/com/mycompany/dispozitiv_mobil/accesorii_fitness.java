@@ -11,6 +11,8 @@ public class accesorii_fitness extends Dispozitiv_mobil
     String tipCataramaBratara;
     boolean cureaAjustabila;
     String tipIncarcator;
+    final int TVA = 12;
+    protected double pretTVA;
     
     public accesorii_fitness() //constructor fara argumente
 {

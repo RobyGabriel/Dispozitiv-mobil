@@ -12,6 +12,8 @@ public class fitness_band extends Dispozitiv_mobil
     int pasiInregistrati;
     int caloriiArse;
     boolean monitorizareSomn;
+    final int TVA = 12;
+    protected double pretTVA;
 
 public fitness_band() //constructor fara argumente
 {

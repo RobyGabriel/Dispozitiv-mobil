@@ -1,5 +1,10 @@
 package com.mycompany.dispozitiv_mobil;
 
-public class FitnessBandFrame {
-    
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class FitnessBandFrame extends JFrame {
+
 }

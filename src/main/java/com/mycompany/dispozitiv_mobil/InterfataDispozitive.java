@@ -1,6 +1,6 @@
-  package com.mycompany.dispozitiv_mobil;
+package com.mycompany.dispozitiv_mobil;
 public interface InterfataDispozitive
 {
 public double calcularePret();
-    public void pretDupaTVA();
+public void pretDupaTVA();
 }

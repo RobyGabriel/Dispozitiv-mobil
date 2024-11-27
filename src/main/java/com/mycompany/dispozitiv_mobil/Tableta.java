@@ -52,10 +52,12 @@ public class Tableta extends Dispozitiv_mobil {
                 + "Display: " + displayTip + "\n" + (tastatura ? "Are tastatura\n" : "Nu are tastatura\n");
     }
 
+    @Override
     public double calcularePret() {
         return pret * ((pret * TVA) / 100);
     }
 
+    @Override
     public void pretDupaTVA() {
         pretTVA = pret * ((pret * TVA) / 100);
         System.out.println(pretTVA);

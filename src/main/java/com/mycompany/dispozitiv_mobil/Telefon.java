@@ -39,11 +39,13 @@ public class Telefon extends Dispozitiv_mobil {
     }
     //Metoda toString
 
+    @Override
     public String toString() {
         return super.toString() + " " + model + "\nProcesor " + procesor + " inch" + "\nCamera " + camera + " mAh" + "lei\n" +
                "Display " + displayTip + "\n";
     }
 
+    @Override
     public double calcularePret() {
         pretTVA = pret * ((pret * TVA) / 100);
         return pretTVA;

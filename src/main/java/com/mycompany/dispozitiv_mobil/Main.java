@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         // Creăm o listă de tip Object pentru a stoca elemente de tip Telefon
-        ArrayList<Object> telefoane = new ArrayList<>();
+        ArrayList<Telefon> telefoane = new ArrayList<>();
 
         // Adăugăm 10 obiecte Telefon în listă
         telefoane.add(new Telefon("Samsung", 6.5, "Galaxy S21", 108, "Exynos 2100", 4500, 4000, "AMOLED"));
@@ -32,7 +32,7 @@ public class Main {
         tablete.add(new Tableta("Huawei", 10.1, "MediaPad T5", 8, "Kirin 659", 1800, 5100, false, "IPS"));
         tablete.add(new Tableta("Xiaomi", 10.1, "Mi Pad 4", 13, "Snapdragon 660", 2300, 6000, true, "IPS"));
         
-        ArrayList<Object> fitnessBand = new ArrayList<>();
+        ArrayList<fitness_band> fitnessBand = new ArrayList<>();
 
         // Adăugăm 10 obiecte de tip fitness_band cu valori reale
         fitnessBand.add(new fitness_band("Samsung", "Galaxy Fit 2", 1.5, 749, 500, "Pulsoximetru", "IP68", 10243, 500, true));
@@ -46,7 +46,7 @@ public class Main {
         fitnessBand.add(new fitness_band("Polar", "Ignite 3", 1.6, 1099, 450, "Fitness Tracker", "IP67", 7000, 350, true));
         fitnessBand.add(new fitness_band("Honor", "Band 6", 1.47, 199, 300, "Stress Monitor", "5ATM", 7800, 330, true));
         
-        ArrayList<Object> accesoriiFitness = new ArrayList<>();
+        ArrayList<accesorii_fitness> accesoriiFitness = new ArrayList<>();
 
         // Adăugăm 10 obiecte de tip accesorii_fitness cu valori reale
         accesoriiFitness.add(new accesorii_fitness("Samsung", 1.5, 600, 2000, "brățară fitness", "neagră", "magnetică", true, "magnetic"));
@@ -61,13 +61,9 @@ public class Main {
         accesoriiFitness.add(new accesorii_fitness("Realme", 1.3, 250, 1000, "brățară sport", "neagră", "cu cataramă", false, "microUSB"));
         
         System.out.println(telefoane);
-        System.out.println("\n");
         System.out.println(tablete);
-        System.out.println("\n");
         System.out.println(fitnessBand);
-        System.out.println("\n");
         System.out.println(accesoriiFitness);
-        System.out.println("\n");
     }
 
 }

@@ -71,7 +71,7 @@ public class Tableta extends Dispozitiv_mobil {
     }
 
     public void setBrand(String Brand) {
-        this.Brand = Brand;
+    this.Brand = Brand;
     }
 
     public double getMarimeEcran() {

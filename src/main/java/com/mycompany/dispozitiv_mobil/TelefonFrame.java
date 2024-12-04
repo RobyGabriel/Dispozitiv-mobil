@@ -7,17 +7,16 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class TelefonFrame extends JFrame {
-    private JTextField brandField, modelField, procesorField, cameraField, displayTipField, ecranField, pretField, baterieField;
-    private JTextArea resultTextArea;
-    private JScrollPane scrollPane;
-    private JButton filterButton;
-
-    private ArrayList<Telefon> telefoane;
+    protected JTextField brandField, modelField, procesorField, cameraField, displayTipField, ecranField, pretField, baterieField;
+    protected JTextArea resultTextArea;
+    protected JScrollPane scrollPane;
+    protected JButton filterButton;
+    
+    protected ArrayList<Telefon> telefoane;
 
     public TelefonFrame(ArrayList<Telefon> telefoane) {
         this.telefoane = telefoane;
         setTitle("Telefon Details");
-        
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());

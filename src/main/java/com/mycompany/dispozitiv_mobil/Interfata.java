@@ -6,8 +6,12 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class Interfata extends JFrame {
-    private ArrayList<Telefon> telefoane;
-    private ArrayList<Tableta> tablete;
+    protected ArrayList<Telefon> telefoane;
+    protected ArrayList<Tableta> tablete;
+    protected ArrayList<FitnessBand> fitnessBand;
+    protected ArrayList<AccesoriiFitness> accesoriiFitness;
+    protected ArrayList<Smartwatch> smartwatch;
+    protected ArrayList<AccesoriiSmartwatch> accesoriiSmartwatch;
     public Interfata(ArrayList<Telefon> telefoane,ArrayList<Tableta> tablete ) {
         this.telefoane = telefoane;
         this.tablete=tablete;
@@ -16,11 +20,9 @@ public class Interfata extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
 
-        // Create a panel to hold the buttons
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        // Create 6 buttons
         JButton telefonButton = new JButton("Telefon");
         JButton tabletaButton = new JButton("Tableta");
         JButton fitnessBandButton = new JButton("Fitness Band");
@@ -28,12 +30,11 @@ public class Interfata extends JFrame {
         JButton button5 = new JButton("Accesorii Fitness");
         JButton button6 = new JButton("Accesorii Smartwatch");
 
-        // Add action listeners for Telefon and Tableta buttons
         telefonButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                new TelefonFrame(telefoane).setVisible(true); // Pass the list to TelefonFrame
+                new TelefonFrame(telefoane).setVisible(true);
             }
         });
 
@@ -59,7 +60,6 @@ public class Interfata extends JFrame {
             }
         });
 
-        // Add buttons to the panel
         panel.add(telefonButton);
         panel.add(Box.createVerticalStrut(100));
         panel.add(tabletaButton);
@@ -73,7 +73,6 @@ public class Interfata extends JFrame {
         panel.add(button6);
         panel.add(Box.createVerticalStrut(100));
         panel.setBounds(50, 50, 300, 800);
-        // Add the panel to the frame
         add(panel);
         setVisible(true);
     }

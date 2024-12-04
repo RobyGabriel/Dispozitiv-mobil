@@ -7,13 +7,13 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class TabletaFrame extends JFrame {
-    private JTextField brandField, modelField, procesorField, cameraField, displayTipField, ecranField, pretField, baterieField;
-    private JTextArea resultTextArea;
-    private JScrollPane scrollPane;
-    private JButton filterButton;
-    private JCheckBox tastaturaCheckBox;
+    protected JTextField brandField, modelField, procesorField, cameraField, displayTipField, ecranField, pretField, baterieField;
+    protected JTextArea resultTextArea;
+    protected JScrollPane scrollPane;
+    protected JButton filterButton;
+    protected JCheckBox tastaturaCheckBox;
 
-    private ArrayList<Tableta> tablete;
+    protected ArrayList<Tableta> tablete;
 
     public TabletaFrame(ArrayList<Tableta> tablete) {
         this.tablete = tablete;
@@ -23,9 +23,8 @@ public class TabletaFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // Panou pentru filtre
         JPanel filtersPanel = new JPanel();
-        filtersPanel.setLayout(new GridLayout(10, 2, 10, 10)); // am crescut numărul de rânduri pentru a adăuga un nou câmp
+        filtersPanel.setLayout(new GridLayout(10, 2, 10, 10));
         filtersPanel.setPreferredSize(new Dimension(350, 1080));
 
         brandField = new JTextField();
@@ -53,7 +52,6 @@ public class TabletaFrame extends JFrame {
         scrollPane = new JScrollPane(resultTextArea);
         scrollPane.setPreferredSize(new Dimension(1400, 1000));
 
-        // Adăugăm componentele în panoul de filtre
         filtersPanel.add(new JLabel("Brand:"));
         filtersPanel.add(brandField);
         filtersPanel.add(new JLabel("Model:"));
@@ -70,7 +68,7 @@ public class TabletaFrame extends JFrame {
         filtersPanel.add(pretField);
         filtersPanel.add(new JLabel("Baterie (mAh):"));
         filtersPanel.add(baterieField);
-        filtersPanel.add(tastaturaCheckBox);  // Adăugăm filtrul pentru tastatură
+        filtersPanel.add(tastaturaCheckBox);
         filtersPanel.add(filterButton);
 
         add(filtersPanel, BorderLayout.WEST);
@@ -94,7 +92,7 @@ public class TabletaFrame extends JFrame {
         String ecranText = ecranField.getText();
         String pretText = pretField.getText();
         String baterieText = baterieField.getText();
-        boolean areTastatura = tastaturaCheckBox.isSelected(); // Verificăm dacă checkbox-ul pentru tastatură este bifat
+        boolean areTastatura = tastaturaCheckBox.isSelected();
 
         for (Tableta tableta : tablete) {
             boolean sePotriveste = true;
@@ -106,7 +104,7 @@ public class TabletaFrame extends JFrame {
             if (!ecranText.isEmpty() && tableta.getMarimeEcran() <= Double.parseDouble(ecranText)) sePotriveste = false;
             if (!pretText.isEmpty() && tableta.getPret() >= Double.parseDouble(pretText)) sePotriveste = false;
             if (!baterieText.isEmpty() && tableta.getBaterie() != Integer.parseInt(baterieText)) sePotriveste = false;
-            if (areTastatura && !tableta.isTastatura()) sePotriveste = false;  // Filtrăm și după tastatură
+            if (areTastatura && !tableta.isTastatura()) sePotriveste = false; 
 
             if (sePotriveste) {
                 sb.append(tableta.toString()).append("\n");

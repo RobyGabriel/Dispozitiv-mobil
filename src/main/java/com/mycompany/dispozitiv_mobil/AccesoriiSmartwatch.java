@@ -32,7 +32,7 @@ public class AccesoriiSmartwatch extends Dispozitiv_mobil {
 
     @Override
     public String toString() {
-        return "Accesorii: " + tip_accesorii + "\nModel husa " + model_husa + "\nTip Incarcator: " + tipIncarcator;
+        return "Accesorii: " + tip_accesorii + "\nModel husa: " + model_husa + "\nTip Incarcator: " + tipIncarcator;
 
     }        //rescriere toString
 

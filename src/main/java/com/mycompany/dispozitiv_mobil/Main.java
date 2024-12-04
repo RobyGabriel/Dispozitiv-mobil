@@ -42,18 +42,32 @@ public class Main {
         fitnessBand.add(new FitnessBand("Polar", "Ignite 3", 1.6, 1099, 450, "Fitness Tracker", "IP67", 7000, 350, true));
         fitnessBand.add(new FitnessBand("Honor", "Band 6", 1.47, 199, 300, "Stress Monitor", "5ATM", 7800, 330, true));
         
+        System.out.println("\nFitness Band de la Samsung cu rezistenta la apa IP68:");
+        for (FitnessBand f : fitnessBand) {
+            if (f.getBrand().equals("Samsung") && f.getRezistentaApa().equals("IP68")) {
+                System.out.println(f);
+            }
+        }
+        
         ArrayList<AccesoriiFitness> accesoriiFitness = new ArrayList<>();
 
-        accesoriiFitness.add(new AccesoriiFitness("Samsung", 1.5, 600, 2000, "brățară fitness", "neagră", "magnetică", true, "magnetic"));
-        accesoriiFitness.add(new AccesoriiFitness("Apple", 1.9, 1200, 2500, "brățară smartwatch", "albă", "clasică", true, "wireless"));
-        accesoriiFitness.add(new AccesoriiFitness("Huawei", 1.4, 450, 1500, "brățară sport", "albastră", "cu cataramă", false, "microUSB"));
-        accesoriiFitness.add(new AccesoriiFitness("Xiaomi", 1.3, 300, 1200, "brățară Mi Band", "roșie", "elastică", true, "magnetic"));
-        accesoriiFitness.add(new AccesoriiFitness("Fitbit", 1.6, 800, 1800, "brățară Charge", "verde", "clasică", true, "USB-C"));
-        accesoriiFitness.add(new AccesoriiFitness("Garmin", 1.5, 950, 2000, "brățară fitness premium", "gri", "cu cataramă", true, "wireless"));
-        accesoriiFitness.add(new AccesoriiFitness("Polar", 1.2, 700, 1700, "brățară sport", "portocalie", "cu cataramă", false, "microUSB"));
-        accesoriiFitness.add(new AccesoriiFitness("Honor", 1.5, 350, 1300, "brățară Honor Band", "roz", "elastică", true, "magnetic"));
-        accesoriiFitness.add(new AccesoriiFitness("Amazfit", 1.1, 400, 1400, "brățară sport simplă", "albă", "elastică", true, "USB-C"));
-        accesoriiFitness.add(new AccesoriiFitness("Realme", 1.3, 250, 1000, "brățară sport", "neagră", "cu cataramă", false, "microUSB"));
+        accesoriiFitness.add(new AccesoriiFitness("Samsung", 1.5, 600, 2000, "bratara fitness", "neagra", "magnetica", true, "magnetic"));
+        accesoriiFitness.add(new AccesoriiFitness("Apple", 1.9, 1200, 2500, "bratara smartwatch", "alba", "clasica", true, "wireless"));
+        accesoriiFitness.add(new AccesoriiFitness("Huawei", 1.4, 450, 1500, "bratara sport", "albastra", "cu catarama", false, "microUSB"));
+        accesoriiFitness.add(new AccesoriiFitness("Xiaomi", 1.3, 300, 1200, "bratara Mi Band", "rosie", "elastică", true, "magnetic"));
+        accesoriiFitness.add(new AccesoriiFitness("Fitbit", 1.6, 800, 1800, "bratara Charge", "verde", "clasica", true, "USB-C"));
+        accesoriiFitness.add(new AccesoriiFitness("Garmin", 1.5, 950, 2000, "bratara fitness premium", "gri", "cu catarama", true, "wireless"));
+        accesoriiFitness.add(new AccesoriiFitness("Polar", 1.2, 700, 1700, "bratara sport", "portocalie", "cu catarama", false, "microUSB"));
+        accesoriiFitness.add(new AccesoriiFitness("Honor", 1.5, 350, 1300, "bratara Honor Band", "roz", "elastica", true, "magnetic"));
+        accesoriiFitness.add(new AccesoriiFitness("Amazfit", 1.1, 400, 1400, "bratara sport simpla", "alba", "elastica", true, "USB-C"));
+        accesoriiFitness.add(new AccesoriiFitness("Garmin", 1.3, 250, 1000, "bratara sport", "neagra", "cu catarama", false, "microUSB"));
+        
+        System.out.println("\nAccesoriu fitness de la Garmin de culoare neagra:");
+        for (AccesoriiFitness af : accesoriiFitness) {
+            if (af.getBrand().equals("Garmin") && af.getCuloareBratara().equals("neagra")) {
+                System.out.println(af);
+            }
+        }
         
         ArrayList<Smartwatch> smartwatch = new ArrayList<>();
 
@@ -68,7 +82,7 @@ public class Main {
         smartwatch.add(new Smartwatch("Withings", 1.2, 200, 150, "Alb", "OLED", "IP68"));
         smartwatch.add(new Smartwatch("Polar", 1.3, 550, 180, "Negru", "MIP", "5ATM"));
         
-        System.out.println("Smartwatch cu pret mai mic de 1000 lei si ecran AMOLED:");
+        System.out.println("\nSmartwatch cu pret mai mic de 1000 lei si ecran AMOLED:");
         for (Smartwatch s : smartwatch) {
             if (s.calcularePret() > 1000 && s.getTipEcran().equals("AMOLED")) {
                 System.out.println(s);
@@ -77,18 +91,18 @@ public class Main {
         
         ArrayList<AccesoriiSmartwatch> accesoriiSmartwatch = new ArrayList<>();
 
-        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Apple", 1.78, 3500, 300, "Curea silicon", "Husă protectoare din silicon", "Magnetic"));
-        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Samsung", 1.4, 1500, 200, "Curea din piele", "Husă din plastic", "Qi Wireless"));
-        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Garmin", 1.3, 700, 180, "Curea din metal", "Husă de protecție din silicon", "USB-C"));
-        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Fossil", 1.5, 1200, 250, "Curea textilă", "Husă din piele", "Wireless"));
-        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Huawei", 1.6, 1200, 350, "Curea sport", "Husă protectoare", "Magnetic"));
-        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Fitbit", 1.45, 600, 150, "Curea silicon", "Husă transparentă", "USB-A"));
-        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Amazfit", 1.39, 700, 180, "Curea din piele", "Husă de protecție din silicon", "Wireless"));
-        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Xiaomi", 1.4, 800, 200, "Curea sport", "Husă din silicon", "Magnetic"));
-        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Withings", 1.2, 200, 150, "Curea din piele", "Husă subțire din silicon", "USB-C"));
-        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Polar", 1.3, 550, 180, "Curea sport", "Husă protectoare din plastic", "Magnetic"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Apple", 1.78, 3500, 300, "Curea silicon", "Husa protectoare din silicon", "Magnetic"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Samsung", 1.4, 1500, 200, "Curea din piele", "Husa din plastic", "Qi Wireless"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Garmin", 1.3, 700, 180, "Curea din metal", "Husa de protectie din silicon", "USB-C"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Fossil", 1.5, 1200, 250, "Curea textila", "Husa din piele", "Wireless"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Huawei", 1.6, 1200, 350, "Curea sport", "Husa protectoare", "Magnetic"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Fitbit", 1.45, 600, 150, "Curea silicon", "Husa transparentă", "USB-A"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Amazfit", 1.39, 700, 180, "Curea din piele", "Husa de protectie din silicon", "Wireless"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Xiaomi", 1.4, 800, 200, "Curea sport", "Husa din silicon", "Magnetic"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Withings", 1.2, 200, 150, "Curea din piele", "Husa subtire din silicon", "USB-C"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Polar", 1.3, 550, 180, "Curea sport", "Husa protectoare din plastic", "Magnetic"));
         
-        System.out.println("\nAccesorii Smartwatch cu husa din silicon si încarcare magnetica:");
+        System.out.println("\nAccesorii Smartwatch cu husa din silicon si incarcare magnetica:");
         for (AccesoriiSmartwatch a : accesoriiSmartwatch) {
             if (a.getModelHusa().contains("silicon") && a.getTipIncarcator().equals("Magnetic")) {
                 System.out.println(a);

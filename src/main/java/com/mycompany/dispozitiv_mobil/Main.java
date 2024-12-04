@@ -75,21 +75,21 @@ public class Main {
             }
         }
         
-        ArrayList<AcSmartwatch> accesoriiSmartwatch = new ArrayList<>();
+        ArrayList<AccesoriiSmartwatch> accesoriiSmartwatch = new ArrayList<>();
 
-        accesoriiSmartwatch.add(new AcSmartwatch("Apple", 1.78, 3500, 300, "Curea silicon", "Husă protectoare din silicon", "Magnetic"));
-        accesoriiSmartwatch.add(new AcSmartwatch("Samsung", 1.4, 1500, 200, "Curea din piele", "Husă din plastic", "Qi Wireless"));
-        accesoriiSmartwatch.add(new AcSmartwatch("Garmin", 1.3, 700, 180, "Curea din metal", "Husă de protecție din silicon", "USB-C"));
-        accesoriiSmartwatch.add(new AcSmartwatch("Fossil", 1.5, 1200, 250, "Curea textilă", "Husă din piele", "Wireless"));
-        accesoriiSmartwatch.add(new AcSmartwatch("Huawei", 1.6, 1200, 350, "Curea sport", "Husă protectoare", "Magnetic"));
-        accesoriiSmartwatch.add(new AcSmartwatch("Fitbit", 1.45, 600, 150, "Curea silicon", "Husă transparentă", "USB-A"));
-        accesoriiSmartwatch.add(new AcSmartwatch("Amazfit", 1.39, 700, 180, "Curea din piele", "Husă de protecție din silicon", "Wireless"));
-        accesoriiSmartwatch.add(new AcSmartwatch("Xiaomi", 1.4, 800, 200, "Curea sport", "Husă din silicon", "Magnetic"));
-        accesoriiSmartwatch.add(new AcSmartwatch("Withings", 1.2, 200, 150, "Curea din piele", "Husă subțire din silicon", "USB-C"));
-        accesoriiSmartwatch.add(new AcSmartwatch("Polar", 1.3, 550, 180, "Curea sport", "Husă protectoare din plastic", "Magnetic"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Apple", 1.78, 3500, 300, "Curea silicon", "Husă protectoare din silicon", "Magnetic"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Samsung", 1.4, 1500, 200, "Curea din piele", "Husă din plastic", "Qi Wireless"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Garmin", 1.3, 700, 180, "Curea din metal", "Husă de protecție din silicon", "USB-C"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Fossil", 1.5, 1200, 250, "Curea textilă", "Husă din piele", "Wireless"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Huawei", 1.6, 1200, 350, "Curea sport", "Husă protectoare", "Magnetic"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Fitbit", 1.45, 600, 150, "Curea silicon", "Husă transparentă", "USB-A"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Amazfit", 1.39, 700, 180, "Curea din piele", "Husă de protecție din silicon", "Wireless"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Xiaomi", 1.4, 800, 200, "Curea sport", "Husă din silicon", "Magnetic"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Withings", 1.2, 200, 150, "Curea din piele", "Husă subțire din silicon", "USB-C"));
+        accesoriiSmartwatch.add(new AccesoriiSmartwatch("Polar", 1.3, 550, 180, "Curea sport", "Husă protectoare din plastic", "Magnetic"));
         
         System.out.println("\nAccesorii Smartwatch cu husa din silicon si încarcare magnetica:");
-        for (AcSmartwatch a : accesoriiSmartwatch) {
+        for (AccesoriiSmartwatch a : accesoriiSmartwatch) {
             if (a.getModelHusa().contains("silicon") && a.getTipIncarcator().equals("Magnetic")) {
                 System.out.println(a);
             }

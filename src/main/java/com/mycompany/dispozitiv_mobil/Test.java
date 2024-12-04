@@ -45,9 +45,9 @@ public class Test {
         System.out.println(testaccesorii_fitness2);
         System.out.println(testaccesorii_fitness3);
 
-        AcSmartwatch testacsmartwatch1 = new AcSmartwatch();
-        AcSmartwatch testacsmartwatch2 = new AcSmartwatch("Samsung", 2.0, 500, 2000, "Husa,Incarcator,Bratara", "Silicon", "Tip C");
-        AcSmartwatch testacsmartwatch3 = new AcSmartwatch(testacsmartwatch2);
+        AccesoriiSmartwatch testacsmartwatch1 = new AccesoriiSmartwatch();
+        AccesoriiSmartwatch testacsmartwatch2 = new AccesoriiSmartwatch("Samsung", 2.0, 500, 2000, "Husa,Incarcator,Bratara", "Silicon", "Tip C");
+        AccesoriiSmartwatch testacsmartwatch3 = new AccesoriiSmartwatch(testacsmartwatch2);
         System.out.println(testacsmartwatch1);
         System.out.println(testacsmartwatch2);
         System.out.println(testacsmartwatch3);

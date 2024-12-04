@@ -1,6 +1,6 @@
 package com.mycompany.dispozitiv_mobil;
 
-public class AcSmartwatch extends Dispozitiv_mobil {
+public class AccesoriiSmartwatch extends Dispozitiv_mobil {
 
     String tip_accesorii;
     String model_husa;
@@ -8,7 +8,7 @@ public class AcSmartwatch extends Dispozitiv_mobil {
     final int TVA = 19;
     protected double pretTVA;
 
-    public AcSmartwatch() //constructor fara argumente
+    public AccesoriiSmartwatch() //constructor fara argumente
     {
         super();
         tip_accesorii = "";
@@ -16,14 +16,14 @@ public class AcSmartwatch extends Dispozitiv_mobil {
         tipIncarcator = "";
     }
 
-    public AcSmartwatch(String Brand, double marimeEcran, double pret, int baterie, String tip_accesorii, String model_husa, String tipIncarcator) {
+    public AccesoriiSmartwatch(String Brand, double marimeEcran, double pret, int baterie, String tip_accesorii, String model_husa, String tipIncarcator) {
         super(Brand, marimeEcran, pret, baterie);
         this.tip_accesorii = tip_accesorii;                //constructor cu toate argumentele
         this.model_husa = model_husa;
         this.tipIncarcator = tipIncarcator;
     }
 
-    public AcSmartwatch(AcSmartwatch A) { //constructor de copiere
+    public AccesoriiSmartwatch(AccesoriiSmartwatch A) { //constructor de copiere
         super(A);
         this.tip_accesorii = A.tip_accesorii;
         this.model_husa = A.model_husa;

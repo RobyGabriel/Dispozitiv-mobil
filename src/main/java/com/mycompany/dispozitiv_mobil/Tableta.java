@@ -114,7 +114,7 @@ public class Tableta extends Dispozitiv_mobil {
         this.model = model;
     }
 
-    public boolean isTastatura() {
+    public boolean areTastatura() {
         return tastatura;
     }
 

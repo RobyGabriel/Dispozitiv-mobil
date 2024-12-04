@@ -7,75 +7,52 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class TelefonFrame extends JFrame {
+
     protected JTextField brandField, modelField, procesorField, cameraField, displayTipField, ecranField, pretField, baterieField;
-    protected JTextArea resultTextArea;
-    protected JScrollPane scrollPane;
+    protected JTextArea rezultat;
+    protected JScrollPane scrollPanel;
     protected JButton filterButton;
-    
+
     protected ArrayList<Telefon> telefoane;
 
     public TelefonFrame(ArrayList<Telefon> telefoane) {
         this.telefoane = telefoane;
-        setTitle("Telefon Details");
+        setTitle("Detalii telefon");
+        setSize(1920, 1080);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        JPanel filtersPanel = new JPanel();
-        filtersPanel.setLayout(new GridLayout(9, 2, 10, 10));
-        filtersPanel.setPreferredSize(new Dimension(350, 1080));
+        JPanel panelFiltre = new JPanel();
+        panelFiltre.setLayout(new GridLayout(9, 2, 10, 10));
+        panelFiltre.setPreferredSize(new Dimension(350, 1080));
 
-        brandField = new JTextField();
-        brandField.setPreferredSize(new Dimension(50, 20));
+        filterButton = new JButton("Filtreaza");
 
-        modelField = new JTextField();
-        modelField.setPreferredSize(new Dimension(50, 20));
+        rezultat = new JTextArea(20, 50);
 
-        procesorField = new JTextField();
-        procesorField.setPreferredSize(new Dimension(50, 20));
+        scrollPanel = new JScrollPane(rezultat);
+        scrollPanel.setPreferredSize(new Dimension(1400, 1000));
 
-        cameraField = new JTextField();
-        cameraField.setPreferredSize(new Dimension(50, 20));
+        panelFiltre.add(new JLabel("Brand:"));
+        panelFiltre.add(brandField = new JTextField(10));
+        panelFiltre.add(new JLabel("Model:"));
+        panelFiltre.add(modelField = new JTextField());
+        panelFiltre.add(new JLabel("Procesor:"));
+        panelFiltre.add(procesorField = new JTextField());
+        panelFiltre.add(new JLabel("Camera (MP):"));
+        panelFiltre.add(cameraField = new JTextField());
+        panelFiltre.add(new JLabel("Display Tip:"));
+        panelFiltre.add(displayTipField = new JTextField());
+        panelFiltre.add(new JLabel("Minim marime ecran(inch):"));
+        panelFiltre.add(ecranField = new JTextField());
+        panelFiltre.add(new JLabel("Pret maxim:"));
+        panelFiltre.add(pretField = new JTextField());
+        panelFiltre.add(new JLabel("Baterie (mAh):"));
+        panelFiltre.add(baterieField = new JTextField());
+        panelFiltre.add(filterButton);
 
-        displayTipField = new JTextField();
-        displayTipField.setPreferredSize(new Dimension(50, 20));
-
-        ecranField = new JTextField();
-        ecranField.setPreferredSize(new Dimension(50, 20));
-
-        pretField = new JTextField();
-        pretField.setPreferredSize(new Dimension(50, 20));
-
-        baterieField = new JTextField();
-        baterieField.setPreferredSize(new Dimension(50, 20));
-
-        filterButton = new JButton("Filtrează");
-
-        resultTextArea = new JTextArea(20, 50);
-
-        scrollPane = new JScrollPane(resultTextArea);
-        scrollPane.setPreferredSize(new Dimension(1400, 1000));
-
-        filtersPanel.add(new JLabel("Brand:"));
-        filtersPanel.add(brandField);
-        filtersPanel.add(new JLabel("Model:"));
-        filtersPanel.add(modelField);
-        filtersPanel.add(new JLabel("Procesor:"));
-        filtersPanel.add(procesorField);
-        filtersPanel.add(new JLabel("Camera (MP):"));
-        filtersPanel.add(cameraField);
-        filtersPanel.add(new JLabel("Display Tip:"));
-        filtersPanel.add(displayTipField);
-        filtersPanel.add(new JLabel("Ecran Size (inches):"));
-        filtersPanel.add(ecranField);
-        filtersPanel.add(new JLabel("Pret maxim:"));
-        filtersPanel.add(pretField);
-        filtersPanel.add(new JLabel("Baterie (mAh):"));
-        filtersPanel.add(baterieField);
-        filtersPanel.add(filterButton);
-
-        add(filtersPanel, BorderLayout.WEST);
-        add(scrollPane, BorderLayout.CENTER);
+        add(panelFiltre, BorderLayout.WEST);
+        add(scrollPanel, BorderLayout.CENTER);
 
         filterButton.addActionListener(new ActionListener() {
             @Override
@@ -90,32 +67,80 @@ public class TelefonFrame extends JFrame {
         String brand = brandField.getText().toLowerCase();
         String model = modelField.getText().toLowerCase();
         String procesor = procesorField.getText().toLowerCase();
-        String cameraText = cameraField.getText();
+        String camera = cameraField.getText();
         String displayTip = displayTipField.getText().toLowerCase();
-        String ecranText = ecranField.getText();
-        String pretText = pretField.getText();
-        String baterieText = baterieField.getText();
-
+        String ecran = ecranField.getText();
+        String pret = pretField.getText();
+        String baterie = baterieField.getText();
         for (Telefon telefon : telefoane) {
-            boolean sePotriveste  = true;
-            if (!brand.isEmpty() && !telefon.getBrand().toLowerCase().contains(brand)) sePotriveste  = false;
-            if (!model.isEmpty() && !telefon.getModel().toLowerCase().contains(model)) sePotriveste  = false;
-            if (!procesor.isEmpty() && !telefon.getProcesor().toLowerCase().contains(procesor)) sePotriveste  = false;
-            if (!cameraText.isEmpty() && telefon.getCamera() != Integer.parseInt(cameraText)) sePotriveste  = false;
-            if (!displayTip.isEmpty() && !telefon.getdisplayTip().toLowerCase().contains(displayTip)) sePotriveste  = false;
-            if (!ecranText.isEmpty() && telefon.getMarimeEcran() <= Double.parseDouble(ecranText)) sePotriveste  = false;
-            if (!pretText.isEmpty() && telefon.getPret() >= Double.parseDouble(pretText)) sePotriveste  = false;
-            if (!baterieText.isEmpty() && telefon.getBaterie() != Integer.parseInt(baterieText)) sePotriveste  = false;
 
-            if (sePotriveste ) {
-                sb.append(telefon.toString()).append("\n");
+            if (!brand.isEmpty() && !telefon.getBrand().toLowerCase().contains(brand)) {
+                continue;
             }
-        }
 
+            if (!model.isEmpty() && !telefon.getModel().toLowerCase().contains(model)) {
+                continue;
+            }
+
+            if (!procesor.isEmpty() && !telefon.getProcesor().toLowerCase().contains(procesor)) {
+                continue;
+            }
+
+            if (!camera.isEmpty()) {
+                try {
+                    int cameraValue = Integer.parseInt(camera);
+                    if (telefon.getCamera() != cameraValue) {
+                        continue;
+                    }
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Introduce un numar valid.");
+                    return;
+                }
+            }
+            if (!displayTip.isEmpty() && !telefon.getdisplayTip().toLowerCase().contains(displayTip))
+            continue;
+            
+            if (!ecran.isEmpty()) {
+                try {
+                    double ecranValue = Double.parseDouble(ecran);
+                    if (telefon.getMarimeEcran() <= ecranValue) {
+                        continue;
+                    }
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Introduce un numar valid.");
+                    return;
+                }
+            }
+
+            if (!pret.isEmpty()) {
+                try {
+                    double pretValue = Double.parseDouble(pret);
+                    if (telefon.getPret() >= pretValue) {
+                        continue;
+                    }
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Introduce un numar valid.");
+                    return;
+                }
+            }
+            if (!baterie.isEmpty()) {
+                try {
+                    int baterieValue = Integer.parseInt(baterie);
+                    if (telefon.getBaterie() != baterieValue) {
+                        continue;
+                    }
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Introduce un numar valid.");
+                    return;
+                }
+            }
+
+            sb.append(telefon.toString()).append("\n");
+        }
         if (sb.length() == 0) {
-            resultTextArea.setText("Nu s-au găsit telefoane care să corespundă.");
+            rezultat.setText("Nu exista.");
         } else {
-            resultTextArea.setText(sb.toString());
+            rezultat.setText(sb.toString());
         }
     }
 }

@@ -8,71 +8,52 @@ import java.util.ArrayList;
 
 public class TabletaFrame extends JFrame {
     protected JTextField brandField, modelField, procesorField, cameraField, displayTipField, ecranField, pretField, baterieField;
-    protected JTextArea resultTextArea;
-    protected JScrollPane scrollPane;
+    protected JTextArea rezultat;
+    protected JScrollPane scrollPanel;
     protected JButton filterButton;
     protected JCheckBox tastaturaCheckBox;
-
+    
     protected ArrayList<Tableta> tablete;
 
     public TabletaFrame(ArrayList<Tableta> tablete) {
         this.tablete = tablete;
-        setTitle("Tableta Details");
-
+        setTitle("Detalii telefon");
+        setSize(1920,1080);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        JPanel filtersPanel = new JPanel();
-        filtersPanel.setLayout(new GridLayout(10, 2, 10, 10));
-        filtersPanel.setPreferredSize(new Dimension(350, 1080));
+        JPanel panelFiltre = new JPanel();
+        panelFiltre.setLayout(new GridLayout(9, 2, 10, 10));
+        panelFiltre.setPreferredSize(new Dimension(350, 1080));
 
-        brandField = new JTextField();
-        modelField = new JTextField();
-        procesorField = new JTextField();
-        cameraField = new JTextField();
-        displayTipField = new JTextField();
-        ecranField = new JTextField();
-        pretField = new JTextField();
-        baterieField = new JTextField();
-        tastaturaCheckBox = new JCheckBox("Are tastatură");
+        filterButton = new JButton("Filtreaza");
 
-        brandField.setPreferredSize(new Dimension(50, 20));
-        modelField.setPreferredSize(new Dimension(50, 20));
-        procesorField.setPreferredSize(new Dimension(50, 20));
-        cameraField.setPreferredSize(new Dimension(50, 20));
-        displayTipField.setPreferredSize(new Dimension(50, 20));
-        ecranField.setPreferredSize(new Dimension(50, 20));
-        pretField.setPreferredSize(new Dimension(50, 20));
-        baterieField.setPreferredSize(new Dimension(50, 20));
+        rezultat = new JTextArea(20, 50);
 
-        filterButton = new JButton("Filtrează");
+        scrollPanel = new JScrollPane(rezultat);
+        scrollPanel.setPreferredSize(new Dimension(1400, 1000));
 
-        resultTextArea = new JTextArea(20, 50);
-        scrollPane = new JScrollPane(resultTextArea);
-        scrollPane.setPreferredSize(new Dimension(1400, 1000));
+        panelFiltre.add(new JLabel("Brand:"));
+        panelFiltre.add(brandField = new JTextField(10));
+        panelFiltre.add(new JLabel("Model:"));
+        panelFiltre.add(modelField = new JTextField());
+        panelFiltre.add(new JLabel("Procesor:"));
+        panelFiltre.add(procesorField = new JTextField());
+        panelFiltre.add(new JLabel("Camera (MP):"));
+        panelFiltre.add(cameraField = new JTextField());
+        panelFiltre.add(new JLabel("Display Tip:"));
+        panelFiltre.add(displayTipField = new JTextField());
+        panelFiltre.add(new JLabel("Minim marime ecran(inch):"));
+        panelFiltre.add(ecranField = new JTextField());
+        panelFiltre.add(new JLabel("Pret maxim:"));
+        panelFiltre.add(pretField = new JTextField());
+        panelFiltre.add(new JLabel("Baterie (mAh):"));
+        panelFiltre.add(baterieField = new JTextField());
+        panelFiltre.add(tastaturaCheckBox = new JCheckBox("Are tastatura"));
+        panelFiltre.add(filterButton);
 
-        filtersPanel.add(new JLabel("Brand:"));
-        filtersPanel.add(brandField);
-        filtersPanel.add(new JLabel("Model:"));
-        filtersPanel.add(modelField);
-        filtersPanel.add(new JLabel("Procesor:"));
-        filtersPanel.add(procesorField);
-        filtersPanel.add(new JLabel("Camera (MP):"));
-        filtersPanel.add(cameraField);
-        filtersPanel.add(new JLabel("Display Tip:"));
-        filtersPanel.add(displayTipField);
-        filtersPanel.add(new JLabel("Marime minima ecran(inch):"));
-        filtersPanel.add(ecranField);
-        filtersPanel.add(new JLabel("Pret maxim:"));
-        filtersPanel.add(pretField);
-        filtersPanel.add(new JLabel("Baterie (mAh):"));
-        filtersPanel.add(baterieField);
-        filtersPanel.add(tastaturaCheckBox);
-        filtersPanel.add(filterButton);
-
-        add(filtersPanel, BorderLayout.WEST);
-        add(scrollPane, BorderLayout.CENTER);
+        add(panelFiltre, BorderLayout.WEST);
+        add(scrollPanel, BorderLayout.CENTER);
 
         filterButton.addActionListener(new ActionListener() {
             @Override
@@ -87,34 +68,85 @@ public class TabletaFrame extends JFrame {
         String brand = brandField.getText().toLowerCase();
         String model = modelField.getText().toLowerCase();
         String procesor = procesorField.getText().toLowerCase();
-        String cameraText = cameraField.getText();
+        String camera = cameraField.getText();
         String displayTip = displayTipField.getText().toLowerCase();
-        String ecranText = ecranField.getText();
-        String pretText = pretField.getText();
-        String baterieText = baterieField.getText();
+        String ecran = ecranField.getText();
+        String pret = pretField.getText();
+        String baterie = baterieField.getText();
         boolean areTastatura = tastaturaCheckBox.isSelected();
 
         for (Tableta tableta : tablete) {
             boolean sePotriveste = true;
-            if (!brand.isEmpty() && !tableta.getBrand().toLowerCase().contains(brand)) sePotriveste = false;
-            if (!model.isEmpty() && !tableta.getModel().toLowerCase().contains(model)) sePotriveste = false;
-            if (!procesor.isEmpty() && !tableta.getProcesor().toLowerCase().contains(procesor)) sePotriveste = false;
-            if (!cameraText.isEmpty() && tableta.getCamera() != Integer.parseInt(cameraText)) sePotriveste = false;
-            if (!displayTip.isEmpty() && !tableta.getDisplayTip().toLowerCase().contains(displayTip)) sePotriveste = false;
-            if (!ecranText.isEmpty() && tableta.getMarimeEcran() <= Double.parseDouble(ecranText)) sePotriveste = false;
-            if (!pretText.isEmpty() && tableta.getPret() >= Double.parseDouble(pretText)) sePotriveste = false;
-            if (!baterieText.isEmpty() && tableta.getBaterie() != Integer.parseInt(baterieText)) sePotriveste = false;
-            if (areTastatura && !tableta.isTastatura()) sePotriveste = false; 
+            if (!brand.isEmpty() && !tableta.getBrand().toLowerCase().contains(brand))
+                continue;
+
+            if (!model.isEmpty() && !tableta.getModel().toLowerCase().contains(model))
+                continue;
+
+            if (!procesor.isEmpty() && !tableta.getProcesor().toLowerCase().contains(procesor))
+                continue;
+
+            if (!camera.isEmpty()) {
+                try {
+                    int cameraValue = Integer.parseInt(camera);
+                    if (tableta.getCamera() != cameraValue) {
+                        continue;
+                    }
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Introduce un numar valid.");
+                    return;
+                }
+            }
+
+            if (!ecran.isEmpty()) {
+                try {
+                    double ecranValue = Double.parseDouble(ecran);
+                    if (tableta.getMarimeEcran() <= ecranValue) {
+                        continue;
+                    }
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Introduce un numar valid.");
+                    return;
+                }
+            }
+
+            if (!pret.isEmpty()) {
+                try {
+                    double pretValue = Double.parseDouble(pret);
+                    if (tableta.getPret() >= pretValue) {
+                        continue;
+                    }
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Introduce un numar valid.");
+                    return;
+                }
+            }
+            if (!displayTip.isEmpty() && !tableta.getDisplayTip().toLowerCase().contains(displayTip))
+                continue;
+            
+            if (!baterie.isEmpty()) {
+                try {
+                    int baterieValue = Integer.parseInt(baterie);
+                    if (tableta.getBaterie() != baterieValue) {
+                        continue;
+                    }
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Introduce un numar valid.");
+                    return;
+                }
+            }
+            if (areTastatura && !tableta.areTastatura())
+                continue;
 
             if (sePotriveste) {
-                sb.append(tableta.toString()).append("\n");
+                sb.append(tableta.toString() + "\n");
             }
         }
 
         if (sb.length() == 0) {
-            resultTextArea.setText("Nu s-au găsit tablete care să corespundă.");
+            rezultat.setText("Nu exista.");
         } else {
-            resultTextArea.setText(sb.toString());
+            rezultat.setText(sb.toString());
         }
     }
 }

@@ -67,6 +67,13 @@ public class Main {
         smartwatch.add(new Smartwatch("Withings", 1.2, 200, 150, "Alb", "OLED", "IP68"));
         smartwatch.add(new Smartwatch("Polar", 1.3, 550, 180, "Negru", "MIP", "5ATM"));
         
+        System.out.println("Smartwatch cu pret mai mic de 1000 lei si ecran AMOLED:");
+        for (Smartwatch s : smartwatch) {
+            if (s.calcularePret() > 1000 && s.getTipEcran().equals("AMOLED")) {
+                System.out.println(s);
+            }
+        }
+        
         ArrayList<AcSmartwatch> accesoriiSmartwatch = new ArrayList<>();
 
         accesoriiSmartwatch.add(new AcSmartwatch("Apple", 1.78, 3500, 300, "Curea silicon", "Husă protectoare din silicon", "Magnetic"));
@@ -79,6 +86,13 @@ public class Main {
         accesoriiSmartwatch.add(new AcSmartwatch("Xiaomi", 1.4, 800, 200, "Curea sport", "Husă din silicon", "Magnetic"));
         accesoriiSmartwatch.add(new AcSmartwatch("Withings", 1.2, 200, 150, "Curea din piele", "Husă subțire din silicon", "USB-C"));
         accesoriiSmartwatch.add(new AcSmartwatch("Polar", 1.3, 550, 180, "Curea sport", "Husă protectoare din plastic", "Magnetic"));
+        
+        System.out.println("\nAccesorii Smartwatch cu husă din silicon și încărcare magnetică:");
+        for (AcSmartwatch a : accesoriiSmartwatch) {
+            if (a.getModelHusa().contains("silicon") && a.getTipIncarcator().equals("Magnetic")) {
+                System.out.println(a);
+            }
+        }
         
         
     }

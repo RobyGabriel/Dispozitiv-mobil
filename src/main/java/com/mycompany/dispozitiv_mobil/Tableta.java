@@ -1,7 +1,10 @@
+package com.mycompany.dispozitiv_mobil;
+
+import com.mycompany.dispozitiv_mobil.Dispozitiv_mobil;
 /*
 Ichim Ionut
  */
-package com.mycompany.dispozitiv_mobil;
+
 
 public class Tableta extends Dispozitiv_mobil {
 

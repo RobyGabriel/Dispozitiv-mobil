@@ -30,7 +30,6 @@ public class Main {
         tablete.add(new Tableta("Xiaomi", 10.1, "Mi Pad 4", 13, "Snapdragon 660", 2300, 6000, true, "IPS"));
         
         ArrayList<fitness_band> fitnessBand = new ArrayList<>();
-
         fitnessBand.add(new fitness_band("Samsung", "Galaxy Fit 2", 1.5, 749, 500, "Pulsoximetru", "IP68", 10243, 500, true));
         fitnessBand.add(new fitness_band("Apple", "Watch Series 7", 1.9, 1599, 600, "ECG", "WR50", 12000, 700, true));
         fitnessBand.add(new fitness_band("Fitbit", "Charge 5", 1.4, 799, 450, "HR Sensor", "IP68", 9500, 550, true));
@@ -41,7 +40,7 @@ public class Main {
         fitnessBand.add(new fitness_band("Amazfit", "Band 5", 1.1, 179, 350, "Oxygen Monitor", "5ATM", 5000, 250, true));
         fitnessBand.add(new fitness_band("Polar", "Ignite 3", 1.6, 1099, 450, "Fitness Tracker", "IP67", 7000, 350, true));
         fitnessBand.add(new fitness_band("Honor", "Band 6", 1.47, 199, 300, "Stress Monitor", "5ATM", 7800, 330, true));
-        
+        System.out.print(fitnessBand.get(3));
         ArrayList<accesorii_fitness> accesoriiFitness = new ArrayList<>();
 
         accesoriiFitness.add(new accesorii_fitness("Samsung", 1.5, 600, 2000, "brățară fitness", "neagră", "magnetică", true, "magnetic"));
@@ -81,7 +80,7 @@ public class Main {
         accesoriiSmartwatch.add(new acsmartwatch("Withings", 1.2, 200, 150, "Curea din piele", "Husă subțire din silicon", "USB-C"));
         accesoriiSmartwatch.add(new acsmartwatch("Polar", 1.3, 550, 180, "Curea sport", "Husă protectoare din plastic", "Magnetic"));
         
-        Interfata a=new Interfata(telefoane,tablete);
+        
     }
 
 }

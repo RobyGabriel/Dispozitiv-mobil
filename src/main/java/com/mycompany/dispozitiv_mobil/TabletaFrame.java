@@ -38,7 +38,6 @@ public class TabletaFrame extends JFrame {
         baterieField = new JTextField();
         tastaturaCheckBox = new JCheckBox("Are tastatură");
 
-        // Setăm dimensiunile pentru câmpurile de text
         brandField.setPreferredSize(new Dimension(50, 20));
         modelField.setPreferredSize(new Dimension(50, 20));
         procesorField.setPreferredSize(new Dimension(50, 20));

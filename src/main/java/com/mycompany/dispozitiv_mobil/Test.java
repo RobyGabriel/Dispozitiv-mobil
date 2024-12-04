@@ -31,16 +31,16 @@ public class Test {
         System.out.println(testsmartwatch1);
         System.out.println(testsmartwatch3);
 
-        fitness_band testfitness_band1 = new fitness_band();
-        fitness_band testfitness_band2 = new fitness_band("Samsung", "Galaxy", 1.5, 749, 500, "pulsoximetru", "IP68", 10243, 500, true);
-        fitness_band testfitness_band3 = new fitness_band(testfitness_band2);
+        FitnessBand testfitness_band1 = new FitnessBand();
+        FitnessBand testfitness_band2 = new FitnessBand("Samsung", "Galaxy", 1.5, 749, 500, "pulsoximetru", "IP68", 10243, 500, true);
+        FitnessBand testfitness_band3 = new FitnessBand(testfitness_band2);
         System.out.println(testfitness_band1);
         System.out.println(testfitness_band2);
         System.out.println(testfitness_band3);
 
-        accesorii_fitness testaccesorii_fitness1 = new accesorii_fitness();
-        accesorii_fitness testaccesorii_fitness2 = new accesorii_fitness("Samsung", 1.5, 600, 2000, "bratara", "neagra", "magnetica", false, "magnetic");
-        accesorii_fitness testaccesorii_fitness3 = new accesorii_fitness(testaccesorii_fitness2);
+        AccesoriiFitness testaccesorii_fitness1 = new AccesoriiFitness();
+        AccesoriiFitness testaccesorii_fitness2 = new AccesoriiFitness("Samsung", 1.5, 600, 2000, "bratara", "neagra", "magnetica", false, "magnetic");
+        AccesoriiFitness testaccesorii_fitness3 = new AccesoriiFitness(testaccesorii_fitness2);
         System.out.println(testaccesorii_fitness1);
         System.out.println(testaccesorii_fitness2);
         System.out.println(testaccesorii_fitness3);

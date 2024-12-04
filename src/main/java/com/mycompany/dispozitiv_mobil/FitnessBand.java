@@ -4,7 +4,7 @@ package com.mycompany.dispozitiv_mobil;
  *
  * @author Manea Robert-Gabriel
  */
-public class fitness_band extends Dispozitiv_mobil
+public class FitnessBand extends Dispozitiv_mobil
 {
     String model;
     String senzor;
@@ -15,7 +15,7 @@ public class fitness_band extends Dispozitiv_mobil
     final int TVA = 19;
     protected double pretTVA;
 
-public fitness_band() //constructor fara argumente
+public FitnessBand() //constructor fara argumente
 {
     super();
     this.model="";
@@ -26,7 +26,7 @@ public fitness_band() //constructor fara argumente
     this.monitorizareSomn=false;
 }
 
-public fitness_band(String Brand, String model, double marimeEcran, double pret, int baterie, String senzor, String rezistentaApa, int pasiInregistrati, int caloriiArse, boolean monitorizareSomn) //constructor cu toate argumentele
+public FitnessBand(String Brand, String model, double marimeEcran, double pret, int baterie, String senzor, String rezistentaApa, int pasiInregistrati, int caloriiArse, boolean monitorizareSomn) //constructor cu toate argumentele
 {
     super(Brand, marimeEcran,pret,baterie);
     this.model=model;
@@ -37,7 +37,7 @@ public fitness_band(String Brand, String model, double marimeEcran, double pret,
     this.monitorizareSomn=monitorizareSomn;
 }
 
-public fitness_band(fitness_band other) //constructor de copiere
+public FitnessBand(FitnessBand other) //constructor de copiere
 {
     super(other);
     this.model=other.model;

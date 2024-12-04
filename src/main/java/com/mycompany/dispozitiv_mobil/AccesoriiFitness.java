@@ -4,7 +4,7 @@ package com.mycompany.dispozitiv_mobil;
  *
  * @author Manea Robert-Gabriel
  */
-public class accesorii_fitness extends Dispozitiv_mobil 
+public class AccesoriiFitness extends Dispozitiv_mobil 
 {
     String tipAccesoriu;
     String culoareBratara;
@@ -14,7 +14,7 @@ public class accesorii_fitness extends Dispozitiv_mobil
     final int TVA = 19;
     protected double pretTVA;
     
-    public accesorii_fitness() //constructor fara argumente
+    public AccesoriiFitness() //constructor fara argumente
 {
     super();
     this.tipAccesoriu="";
@@ -24,7 +24,7 @@ public class accesorii_fitness extends Dispozitiv_mobil
     this.tipIncarcator="";
 }
 
-public accesorii_fitness(String Brand, double marimeEcran, double pret, int baterie, String tipAccesoriu, String culoareBratara, String tipCataramaBratara, boolean cureaAjustabila, String tipIncarcator) //constructor cu toate argumentele
+public AccesoriiFitness(String Brand, double marimeEcran, double pret, int baterie, String tipAccesoriu, String culoareBratara, String tipCataramaBratara, boolean cureaAjustabila, String tipIncarcator) //constructor cu toate argumentele
 {
     super(Brand,marimeEcran,pret,baterie);
     this.tipAccesoriu=tipAccesoriu;
@@ -34,7 +34,7 @@ public accesorii_fitness(String Brand, double marimeEcran, double pret, int bate
     this.tipIncarcator=tipIncarcator;
 }
 
-public accesorii_fitness(accesorii_fitness other) //constructor de copiere
+public AccesoriiFitness(AccesoriiFitness other) //constructor de copiere
 {
     super(other);
     this.tipAccesoriu=other.tipAccesoriu;

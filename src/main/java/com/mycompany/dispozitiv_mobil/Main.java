@@ -87,7 +87,7 @@ public class Main {
         accesoriiSmartwatch.add(new AcSmartwatch("Withings", 1.2, 200, 150, "Curea din piele", "Husă subțire din silicon", "USB-C"));
         accesoriiSmartwatch.add(new AcSmartwatch("Polar", 1.3, 550, 180, "Curea sport", "Husă protectoare din plastic", "Magnetic"));
         
-        System.out.println("\nAccesorii Smartwatch cu husă din silicon și încărcare magnetică:");
+        System.out.println("\nAccesorii Smartwatch cu husa din silicon si încarcare magnetica:");
         for (AcSmartwatch a : accesoriiSmartwatch) {
             if (a.getModelHusa().contains("silicon") && a.getTipIncarcator().equals("Magnetic")) {
                 System.out.println(a);

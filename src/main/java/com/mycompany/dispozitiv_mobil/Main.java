@@ -50,12 +50,6 @@ public class Main {
         fitnessBand.add(new FitnessBand("Polar", "Ignite 3", 1.6, 1099, 450, "Fitness Tracker", "IP67", 7000, 350, true));
         fitnessBand.add(new FitnessBand("Honor", "Band 6", 1.47, 199, 300, "Stress Monitor", "5ATM", 7800, 330, true));
         
-        System.out.println("\nFitness Band de la Samsung cu rezistenta la apa IP68:");
-        for (FitnessBand f : fitnessBand) {
-            if (f.getBrand().equals("Samsung") && f.getRezistentaApa().equals("IP68")) {
-                System.out.println(f);
-            }
-        }
         
         ArrayList<AccesoriiFitness> accesoriiFitness = new ArrayList<>();
 
@@ -70,12 +64,6 @@ public class Main {
         accesoriiFitness.add(new AccesoriiFitness("Amazfit", 1.1, 400, 1400, "bratara sport simpla", "alba", "elastica", true, "USB-C"));
         accesoriiFitness.add(new AccesoriiFitness("Garmin", 1.3, 250, 1000, "bratara sport", "neagra", "cu catarama", false, "microUSB"));
         
-        System.out.println("\nAccesoriu fitness de la Garmin de culoare neagra:");
-        for (AccesoriiFitness af : accesoriiFitness) {
-            if (af.getBrand().equals("Garmin") && af.getCuloareBratara().equals("neagra")) {
-                System.out.println(af);
-            }
-        }
         
         ArrayList<Smartwatch> smartwatch = new ArrayList<>();
 
@@ -116,6 +104,6 @@ public class Main {
                 System.out.println(a);
             }
         }
-        Interfata a=new Interfata(telefoane,tablete);
+        Interfata a=new Interfata(telefoane,tablete, accesoriiFitness);
     }
 }

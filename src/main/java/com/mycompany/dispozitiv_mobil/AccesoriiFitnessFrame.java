@@ -18,8 +18,7 @@ public class AccesoriiFitnessFrame extends JFrame {
     public AccesoriiFitnessFrame(ArrayList<AccesoriiFitness> accesoriiFitness) {
         this.accesoriiFitness = accesoriiFitness;
         setTitle("Detalii accesoriu bratara fitness");
-        setSize(1920,1080);
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setSize(1000,800);
         setLayout(new BorderLayout());
 
         JPanel panelFiltre = new JPanel();

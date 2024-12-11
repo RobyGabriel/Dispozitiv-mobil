@@ -18,8 +18,7 @@ public class FitnessBandFrame extends JFrame {
     public FitnessBandFrame(ArrayList<FitnessBand> fitnessBand) {
         this.fitnessBand = fitnessBand;
         setTitle("Detalii fitness band");
-        setSize(1920,1080);
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setSize(1000,800);
         setLayout(new BorderLayout());
 
         JPanel panelFiltre = new JPanel();

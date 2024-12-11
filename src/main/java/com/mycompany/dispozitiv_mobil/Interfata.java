@@ -29,8 +29,8 @@ public class Interfata extends JFrame {
         JButton tabletaButton = new JButton("Tableta");
         JButton fitnessBandButton = new JButton("Fitness Band");
         JButton accesoriiFitnessButton = new JButton("Accesorii Fitness");
-        JButton button5 = new JButton("Smartwatch");
-        JButton button6 = new JButton("Accesorii Smartwatch");
+        JButton smartwatchButton = new JButton("Smartwatch");
+        JButton accesoriiSmartwatchButton = new JButton("Accesorii Smartwatch");
 
         telefonButton.addActionListener(new ActionListener() {
             @Override
@@ -61,6 +61,21 @@ public class Interfata extends JFrame {
                 new AccesoriiFitnessFrame(accesoriiFitness).setVisible(true);
             }
         });
+        smartwatchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                new SmartwatchFrame(smartwatch).setVisible(true);
+            }
+        });
+
+        accesoriiSmartwatchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               
+                new AccesoriiSmartwatchFrame(accesoriiSmartwatch).setVisible(true);
+            }
+        });
 
         panel.add(telefonButton);
         panel.add(Box.createVerticalStrut(100));
@@ -70,9 +85,9 @@ public class Interfata extends JFrame {
         panel.add(Box.createVerticalStrut(100));
         panel.add(accesoriiFitnessButton);
         panel.add(Box.createVerticalStrut(100));
-        panel.add(button5);
+        panel.add(smartwatchButton);
         panel.add(Box.createVerticalStrut(100));
-        panel.add(button6);
+        panel.add(accesoriiSmartwatchButton);
         panel.add(Box.createVerticalStrut(100));
         panel.setBounds(50, 50, 300, 800);
         add(panel);

@@ -39,16 +39,16 @@ public class Main {
         }
         ArrayList<FitnessBand> fitnessBand = new ArrayList<>();
         
-        fitnessBand.add(new FitnessBand("Samsung", "Galaxy Fit 2", 1.5, 749, 500, "Pulsoximetru", "IP68", 10243, 500, true));
-        fitnessBand.add(new FitnessBand("Apple", "Watch Series 7", 1.9, 1599, 600, "ECG", "WR50", 12000, 700, true));
-        fitnessBand.add(new FitnessBand("Fitbit", "Charge 5", 1.4, 799, 450, "HR Sensor", "IP68", 9500, 550, true));
-        fitnessBand.add(new FitnessBand("Huawei", "Band 7", 1.47, 249, 400, "Sleep Tracker", "5ATM", 8000, 400, true));
-        fitnessBand.add(new FitnessBand("Xiaomi", "Mi Band 7", 1.62, 199, 350, "SpO2 Sensor", "5ATM", 7500, 300, true));
-        fitnessBand.add(new FitnessBand("Garmin", "Vivosmart 5", 1.2, 849, 500, "HRV Sensor", "IP68", 6000, 450, true));
-        fitnessBand.add(new FitnessBand("Samsung", "Galaxy Watch 5", 1.4, 1299, 590, "Temperature Sensor", "IP68", 10000, 600, true));
-        fitnessBand.add(new FitnessBand("Amazfit", "Band 5", 1.1, 179, 350, "Oxygen Monitor", "5ATM", 5000, 250, true));
-        fitnessBand.add(new FitnessBand("Polar", "Ignite 3", 1.6, 1099, 450, "Fitness Tracker", "IP67", 7000, 350, true));
-        fitnessBand.add(new FitnessBand("Honor", "Band 6", 1.47, 199, 300, "Stress Monitor", "5ATM", 7800, 330, true));
+        fitnessBand.add(new FitnessBand("Samsung", "Galaxy Fit 2", 1.5, 749, 500, "Pulsoximetru", "IP68", true));
+        fitnessBand.add(new FitnessBand("Apple", "Watch Series 7", 1.9, 1599, 600, "ECG", "WR50", true));
+        fitnessBand.add(new FitnessBand("Fitbit", "Charge 5", 1.4, 799, 450, "HR Sensor", "IP68", true));
+        fitnessBand.add(new FitnessBand("Huawei", "Band 7", 1.47, 249, 400, "Sleep Tracker", "5ATM", true));
+        fitnessBand.add(new FitnessBand("Xiaomi", "Mi Band 7", 1.62, 199, 350, "SpO2 Sensor", "5ATM", true));
+        fitnessBand.add(new FitnessBand("Garmin", "Vivosmart 5", 1.2, 849, 500, "HRV Sensor", "IP68", true));
+        fitnessBand.add(new FitnessBand("Samsung", "Galaxy Watch 5", 1.4, 1299, 590, "Temperature Sensor", "IP68", true));
+        fitnessBand.add(new FitnessBand("Amazfit", "Band 5", 1.1, 179, 350, "Oxygen Monitor", "5ATM", true));
+        fitnessBand.add(new FitnessBand("Polar", "Ignite 3", 1.6, 1099, 450, "Fitness Tracker", "IP67", true));
+        fitnessBand.add(new FitnessBand("Honor", "Band 6", 1.47, 199, 300, "Stress Monitor", "5ATM", true));
         
         
         ArrayList<AccesoriiFitness> accesoriiFitness = new ArrayList<>();
@@ -104,6 +104,6 @@ public class Main {
                 System.out.println(a);
             }
         }
-        Interfata a=new Interfata(telefoane,tablete, accesoriiFitness);
+        Interfata a=new Interfata(telefoane,tablete, fitnessBand, accesoriiFitness);
     }
 }

@@ -9,8 +9,6 @@ public class FitnessBand extends Dispozitiv_mobil {
     String model;
     String senzor;
     String rezistentaApa;
-    int pasiInregistrati;
-    int caloriiArse;
     boolean monitorizareSomn;
     final int TVA = 19;
     protected double pretTVA;
@@ -21,19 +19,15 @@ public class FitnessBand extends Dispozitiv_mobil {
         this.model = "";
         this.senzor = "";
         this.rezistentaApa = "";
-        this.pasiInregistrati = 0;
-        this.caloriiArse = 0;
         this.monitorizareSomn = false;
     }
 
-    public FitnessBand(String Brand, String model, double marimeEcran, double pret, int baterie, String senzor, String rezistentaApa, int pasiInregistrati, int caloriiArse, boolean monitorizareSomn) //constructor cu toate argumentele
+    public FitnessBand(String Brand, String model, double marimeEcran, double pret, int baterie, String senzor, String rezistentaApa, boolean monitorizareSomn) //constructor cu toate argumentele
     {
         super(Brand, marimeEcran, pret, baterie);
         this.model = model;
         this.senzor = senzor;
         this.rezistentaApa = rezistentaApa;
-        this.pasiInregistrati = pasiInregistrati;
-        this.caloriiArse = caloriiArse;
         this.monitorizareSomn = monitorizareSomn;
     }
 
@@ -43,8 +37,6 @@ public class FitnessBand extends Dispozitiv_mobil {
         this.model = other.model;
         this.senzor = other.senzor;
         this.rezistentaApa = other.rezistentaApa;
-        this.pasiInregistrati = other.pasiInregistrati;
-        this.caloriiArse = other.caloriiArse;
         this.monitorizareSomn = other.monitorizareSomn;
     }
 
@@ -104,22 +96,6 @@ public class FitnessBand extends Dispozitiv_mobil {
         this.rezistentaApa = rezistentaApa;
     }
 
-    public int getPasiInregistrati() {
-        return pasiInregistrati;
-    }
-
-    public void setPasiInregistrati(int pasiInregistrati) {
-        this.pasiInregistrati = pasiInregistrati;
-    }
-
-    public int getCaloriiArse() {
-        return caloriiArse;
-    }
-
-    public void setCaloriiArse(int caloriiArse) {
-        this.caloriiArse = caloriiArse;
-    }
-
     public boolean getMonitorizareSomn() {
         return monitorizareSomn;
     }
@@ -131,7 +107,7 @@ public class FitnessBand extends Dispozitiv_mobil {
     @Override
     public String toString()
     {
-        return "Brand: " + Brand + "\nModel: " + model + "\nMarimea ecranului: " + marimeEcran + " inch" + "\nBaterie: " + baterie + " mAh" + "\nSenzor: " + senzor + "\nPret: " + pret + "lei" + "\nRezistenta apa: " + rezistentaApa + "\nPasi inregistrati " + pasiInregistrati + "\nCalorii arse: " + caloriiArse + "\nMonitorizare somn: " + (monitorizareSomn ? "Da\n" : "Nu\n");
+        return "Brand: " + Brand + "\nModel: " + model + "\nMarimea ecranului: " + marimeEcran + " inch" + "\nBaterie: " + baterie + " mAh" + "\nSenzor: " + senzor + "\nPret: " + pret + "lei" + "\nRezistenta apa: " + rezistentaApa + "\nMonitorizare somn: " + (monitorizareSomn ? "Da\n" : "Nu\n");
     }
 
     @Override

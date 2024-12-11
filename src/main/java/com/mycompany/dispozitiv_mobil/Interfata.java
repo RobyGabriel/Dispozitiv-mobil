@@ -12,10 +12,11 @@ public class Interfata extends JFrame {
     protected ArrayList<AccesoriiFitness> accesoriiFitness;
     protected ArrayList<Smartwatch> smartwatch;
     protected ArrayList<AccesoriiSmartwatch> accesoriiSmartwatch;
-    public Interfata(ArrayList<Telefon> telefoane,ArrayList<Tableta> tablete,ArrayList<AccesoriiFitness> accesoriiFitness) {
+    public Interfata(ArrayList<Telefon> telefoane,ArrayList<Tableta> tablete, ArrayList<FitnessBand> fitnessBand, ArrayList<AccesoriiFitness> accesoriiFitness) {
         this.telefoane = telefoane;
         this.tablete=tablete;
         this.accesoriiFitness=accesoriiFitness;
+        this.fitnessBand=fitnessBand;
         setTitle("Interfata Principala");
         setSize(1000, 800);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -50,7 +51,7 @@ public class Interfata extends JFrame {
         fitnessBandButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new FitnessBandFrame();
+                new FitnessBandFrame(fitnessBand).setVisible(true);
             }
         });
         

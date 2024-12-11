@@ -32,7 +32,7 @@ public class Test {
         System.out.println(testsmartwatch3);
 
         FitnessBand testfitness_band1 = new FitnessBand();
-        FitnessBand testfitness_band2 = new FitnessBand("Samsung", "Galaxy", 1.5, 749, 500, "pulsoximetru", "IP68", 10243, 500, true);
+        FitnessBand testfitness_band2 = new FitnessBand("Samsung", "Galaxy", 1.5, 749, 500, "pulsoximetru", "IP68", true);
         FitnessBand testfitness_band3 = new FitnessBand(testfitness_band2);
         System.out.println(testfitness_band1);
         System.out.println(testfitness_band2);

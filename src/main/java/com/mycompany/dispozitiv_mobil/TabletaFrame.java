@@ -19,6 +19,7 @@ public class TabletaFrame extends JFrame {
         this.tablete = tablete;
         setTitle("Detalii telefon");
         setSize(1920,1080);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLayout(new BorderLayout());
 
@@ -135,7 +136,7 @@ public class TabletaFrame extends JFrame {
                     return;
                 }
             }
-            if (areTastatura && !tableta.areTastatura())
+            if (!areTastatura)
                 continue;
 
             if (sePotriveste) {

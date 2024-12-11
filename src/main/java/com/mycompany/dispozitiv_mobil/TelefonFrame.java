@@ -12,13 +12,13 @@ public class TelefonFrame extends JFrame {
     protected JTextArea rezultat;
     protected JScrollPane scrollPanel;
     protected JButton filterButton;
-
     protected ArrayList<Telefon> telefoane;
 
     public TelefonFrame(ArrayList<Telefon> telefoane) {
         this.telefoane = telefoane;
         setTitle("Detalii telefon");
         setSize(1920, 1080);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLayout(new BorderLayout());
 
@@ -28,7 +28,7 @@ public class TelefonFrame extends JFrame {
 
         filterButton = new JButton("Filtreaza");
 
-        rezultat = new JTextArea(20, 50);
+        rezultat = new JTextArea(1, 1);
 
         scrollPanel = new JScrollPane(rezultat);
         scrollPanel.setPreferredSize(new Dimension(1400, 1000));

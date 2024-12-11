@@ -15,7 +15,11 @@ public class Main {
         telefoane.add(new Telefon("Huawei", 6.4, "P30", 40, "Kirin 980", 3000, 3650, "OLED"));
         telefoane.add(new Telefon("Huawei", 6.6, "Mate 30 Pro", 50, "Kirin 990", 5000, 4500, "OLED"));
         telefoane.add(new Telefon("Samsung", 6.8, "Galaxy Note 20 Ultra", 108, "Exynos 990", 6000, 4500, "Dynamic AMOLED"));
-
+        for (Telefon telefon : telefoane) {
+            if (!telefon.getBrand().equals("Samsung") && telefon.getPret() <=5000) {
+                System.out.println(telefon);
+            }
+        }
         ArrayList<Tableta> tablete = new ArrayList<>();
 
         tablete.add(new Tableta("Samsung", 10.1, "Galaxy Tab S7", 13, "Snapdragon 865+", 3000, 8000, true, "AMOLED"));
@@ -28,7 +32,11 @@ public class Main {
         tablete.add(new Tableta("Samsung", 12.4, "Galaxy Tab S6", 13, "Snapdragon 855", 4500, 7040, true, "Super AMOLED"));
         tablete.add(new Tableta("Huawei", 10.1, "MediaPad T5", 8, "Kirin 659", 1800, 5100, false, "IPS"));
         tablete.add(new Tableta("Xiaomi", 10.1, "Mi Pad 4", 13, "Snapdragon 660", 2300, 6000, true, "IPS"));
-        
+        for (Tableta tableta : tablete) {
+            if (tableta.getBrand().equals("Samsung") && tableta.getPret() <=5000) {
+                System.out.println(tableta);
+            }
+        }
         ArrayList<FitnessBand> fitnessBand = new ArrayList<>();
         
         fitnessBand.add(new FitnessBand("Samsung", "Galaxy Fit 2", 1.5, 749, 500, "Pulsoximetru", "IP68", 10243, 500, true));
@@ -84,7 +92,7 @@ public class Main {
         
         System.out.println("\nSmartwatch cu pret mai mic de 1000 lei si ecran AMOLED:");
         for (Smartwatch s : smartwatch) {
-            if (s.calcularePret() > 1000 && s.getTipEcran().equals("AMOLED")) {
+            if (s.calcularePret() < 1000 && s.getTipEcran().equals("AMOLED")) {
                 System.out.println(s);
             }
         }

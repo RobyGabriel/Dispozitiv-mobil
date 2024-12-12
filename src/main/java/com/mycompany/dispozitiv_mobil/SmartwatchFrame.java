@@ -16,7 +16,7 @@ public class SmartwatchFrame extends JFrame{
 
     public SmartwatchFrame(ArrayList<Smartwatch> smartwatch) {
         this.smartwatch = smartwatch;
-        setTitle("Detalii accesoriu bratara fitness");
+        setTitle("Detalii Smartwatch");
         setSize(1920,1080);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLayout(new BorderLayout());

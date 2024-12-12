@@ -101,7 +101,7 @@ public class Telefon extends Dispozitiv_mobil {
         this.model = model;
     }
 
-    public String getdisplayTip() {
+    public String getDisplayTip() {
         return displayTip;
     }
 

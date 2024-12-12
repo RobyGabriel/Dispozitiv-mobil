@@ -44,6 +44,7 @@ public class AccesoriiSmartwatchFrame extends JFrame {
         panelFiltre.add(pretField = new JTextField());
         panelFiltre.add(new JLabel("Tip incarcator:"));
         panelFiltre.add(tipIncarcatorField = new JTextField());
+        panelFiltre.add(filterButton);
         
 
         add(panelFiltre, BorderLayout.WEST);

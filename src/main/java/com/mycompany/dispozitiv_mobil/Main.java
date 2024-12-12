@@ -104,6 +104,6 @@ public class Main {
                 System.out.println(a);
             }
         }
-        Interfata a=new Interfata(telefoane,tablete, fitnessBand, accesoriiFitness);
+        Interfata a=new Interfata(telefoane,tablete, fitnessBand, accesoriiFitness,smartwatch,accesoriiSmartwatch);
     }
 }

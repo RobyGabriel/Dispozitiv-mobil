@@ -12,7 +12,7 @@ public class Interfata extends JFrame {
     protected ArrayList<AccesoriiFitness> accesoriiFitness;
     protected ArrayList<Smartwatch> smartwatch;
     protected ArrayList<AccesoriiSmartwatch> accesoriiSmartwatch;
-    public Interfata(ArrayList<Telefon> telefoane,ArrayList<Tableta> tablete, ArrayList<FitnessBand> fitnessBand, ArrayList<AccesoriiFitness> accesoriiFitness) {
+    public Interfata(ArrayList<Telefon> telefoane,ArrayList<Tableta> tablete, ArrayList<FitnessBand> fitnessBand, ArrayList<AccesoriiFitness> accesoriiFitness,ArrayList<Smartwatch> smartwatch,ArrayList<AccesoriiSmartwatch> accesoriiSmartwatch){
         this.telefoane = telefoane;
         this.tablete=tablete;
         this.accesoriiFitness=accesoriiFitness;

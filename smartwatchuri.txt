@@ -1,0 +1,8 @@
+Samsung|200.0|Albastru|Amoled|5ATM
+dsadas|3123123.0|dasdas|dasdasd|hug
+sD|321.0|DSADA|ASDAS|DSAD
+dsada|2312.0|asdsad|sadsad|daasd
+dsa|1.0|sss|s|s
+dsad|231.0|dsad|sdas|dsad
+dsad|321.0|s|s|s
+dsds|123.0|sdsds|sdsds|sdsds

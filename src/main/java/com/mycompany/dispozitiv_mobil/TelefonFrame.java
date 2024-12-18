@@ -31,14 +31,14 @@ public class TelefonFrame extends JFrame {
         panelFiltre.setBackground(new Color(255, 255, 255, 240));
         panelFiltre.setPreferredSize(new Dimension(350, 1080));
 
-        brandField = createTextField();
+        /*brandField = createTextField();
         modelField = createTextField();
         procesorField = createTextField();
         cameraField = createTextField();
         displayTipField = createTextField();
         ecranField = createTextField();
         pretField = createTextField();
-        baterieField = createTextField();
+        baterieField = createTextField();*/
 
         panelFiltre.add(createLabel("Brand:"));
         panelFiltre.add(brandField);
@@ -58,15 +58,15 @@ public class TelefonFrame extends JFrame {
         panelFiltre.add(baterieField);
 
         filterButton = new JButton("Filtreaza");
-        styleButton(filterButton);
+        //styleButton(filterButton);
         panelFiltre.add(filterButton);
 
         addButton = new JButton("Adauga Telefon");
-        styleButton(addButton);
+        //styleButton(addButton);
         panelFiltre.add(addButton);
 
         loadButton = new JButton("Incarca Datele");
-        styleButton(loadButton);
+        //styleButton(loadButton);
         panelFiltre.add(loadButton);
 
         rezultat = new JTextArea(20, 50);
@@ -90,7 +90,7 @@ public class TelefonFrame extends JFrame {
         });
     }
 
-    private JTextField createTextField() {
+   /* private JTextField createTextField() {
         JTextField textField = new JTextField();
         textField.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         textField.setPreferredSize(new Dimension(150, 30));
@@ -120,7 +120,7 @@ public class TelefonFrame extends JFrame {
         button.setContentAreaFilled(true);
         button.setBorderPainted(true);
     }
-
+*/
     private void addTelefon() {
         try {
             String brand = brandField.getText();

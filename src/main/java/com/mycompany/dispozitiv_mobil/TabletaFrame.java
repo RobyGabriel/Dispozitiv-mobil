@@ -269,7 +269,7 @@ public class TabletaFrame extends JFrame {
                     int baterieValue = Integer.parseInt(baterie);
                     if (tableta.getBaterie() < baterieValue) continue;
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Introduceți un numar valid pentru Baterie!");
+                    JOptionPane.showMessageDialog(null, "Introduceti un numar valid pentru Baterie!");
                     return;
                 }
             }

@@ -216,7 +216,7 @@ public class TelefonFrame extends JFrame {
                     int cameraValue = Integer.parseInt(camera);
                     if (telefon.getCamera() != cameraValue) continue;
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Introduceți un număr valid pentru Camera!");
+                    JOptionPane.showMessageDialog(null, "Introduceti un numar valid pentru Camera!");
                     return;
                 }
             }

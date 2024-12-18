@@ -275,14 +275,4 @@ public class TelefonFrame extends JFrame {
             JOptionPane.showMessageDialog(this, "Eroare la incarcarea datelor!");
         }
     }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                TelefonFrame frame = new TelefonFrame(new ArrayList<>());
-                frame.setVisible(true);
-            }
-        });
-    }
 }

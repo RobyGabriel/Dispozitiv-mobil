@@ -4,29 +4,31 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 import java.util.ArrayList;
 
 public class TelefonFrame extends JFrame {
+
     protected JTextField brandField, modelField, procesorField, cameraField, displayTipField, ecranField, pretField, baterieField;
     protected JTextArea rezultat;
     protected JScrollPane scrollPanel;
-    protected JButton filterButton, saveButton, loadButton;
-
+    protected JButton filterButton, addButton, loadButton;
     protected ArrayList<Telefon> telefoane;
+    protected String locatie = "C:\\Users\\ichim\\Documents\\NetBeansProjects\\Dispozitiv-mobil\\src\\main\\java\\com\\mycompany\\dispozitiv_mobil\\telefoane.txt";
 
     public TelefonFrame(ArrayList<Telefon> telefoane) {
         this.telefoane = telefoane;
+
         setTitle("Detalii Telefon");
         setSize(1920, 1080);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLayout(new BorderLayout());
         setLocationRelativeTo(null);
-
         getContentPane().setBackground(new Color(245, 245, 245));
 
         JPanel panelFiltre = new JPanel();
-        panelFiltre.setLayout(new GridLayout(10, 2, 10, 10));
+        panelFiltre.setLayout(new GridLayout(11, 2, 10, 10));
         panelFiltre.setBackground(new Color(255, 255, 255, 240));
         panelFiltre.setPreferredSize(new Dimension(350, 1080));
 
@@ -58,25 +60,29 @@ public class TelefonFrame extends JFrame {
 
         filterButton = new JButton("Filtreaza");
         styleButton(filterButton);
+        panelFiltre.add(filterButton);
 
-        saveButton = new JButton("Salveaza Datele");
-        styleButton(saveButton);
-        
+        addButton = new JButton("Adauga Telefon");
+        styleButton(addButton);
+        panelFiltre.add(addButton);
+
         loadButton = new JButton("Incarca Datele");
         styleButton(loadButton);
+        panelFiltre.add(loadButton);
 
-        filterButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                filterButton.setBackground(new Color(0, 102, 204));
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                filterButton.setBackground(new Color(0, 123, 255));
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addTelefon();
             }
         });
 
-        panelFiltre.add(filterButton);
-        panelFiltre.add(saveButton);
-        panelFiltre.add(loadButton);
+        loadButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loadTelefoaneFromFile();
+            }
+        });
 
         rezultat = new JTextArea(20, 50);
         rezultat.setEditable(false);
@@ -91,20 +97,6 @@ public class TelefonFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 filtreazaTelefoane();
-            }
-        });
-
-        saveButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                saveTelefoaneToFile();
-            }
-        });
-
-        loadButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                loadTelefoaneFromFile();
             }
         });
     }
@@ -140,7 +132,58 @@ public class TelefonFrame extends JFrame {
         button.setBorderPainted(true);
     }
 
-    // Method to filter phones based on user input
+    private void addTelefon() {
+        try {
+            String brand = brandField.getText();
+            String model = modelField.getText();
+            String procesor = procesorField.getText();
+            int camera = Integer.parseInt(cameraField.getText());
+            String displayTip = displayTipField.getText();
+            double marimeEcran = Double.parseDouble(ecranField.getText());
+            double pret = Double.parseDouble(pretField.getText());
+            int baterie = Integer.parseInt(baterieField.getText());
+
+            Telefon newTelefon = new Telefon(brand, marimeEcran, model, camera, procesor, pret, baterie, displayTip);
+
+            saveTelefonToFile(newTelefon);
+
+            clearFields();
+
+            JOptionPane.showMessageDialog(this, "Telefonul a fost adaugat cu succes!");
+
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Te rugam sa introduci valori valide!");
+        }
+    }
+
+    private void saveTelefonToFile(Telefon telefon) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(locatie, true))) {
+            writer.write(telefon.getBrand() + "|"
+                    + telefon.getMarimeEcran() + "|"
+                    + telefon.getModel() + "|"
+                    + telefon.getCamera() + "|"
+                    + telefon.getProcesor() + "|"
+                    + telefon.getPret() + "|"
+                    + telefon.getBaterie() + "|"
+                    + telefon.getDisplayTip());
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Eroare la salvarea datelor!");
+        }
+    }
+
+    private void clearFields() {
+        brandField.setText("");
+        modelField.setText("");
+        procesorField.setText("");
+        cameraField.setText("");
+        displayTipField.setText("");
+        ecranField.setText("");
+        pretField.setText("");
+        baterieField.setText("");
+    }
+
     public void filtreazaTelefoane() {
         StringBuilder sb = new StringBuilder();
         String brand = brandField.getText().toLowerCase();
@@ -153,55 +196,47 @@ public class TelefonFrame extends JFrame {
         String baterie = baterieField.getText();
 
         for (Telefon telefon : telefoane) {
-            if (!brand.isEmpty() && !telefon.getBrand().toLowerCase().contains(brand))
-                continue;
-            if (!model.isEmpty() && !telefon.getModel().toLowerCase().contains(model))
-                continue;
-            if (!procesor.isEmpty() && !telefon.getProcesor().toLowerCase().contains(procesor))
-                continue;
+            if (!brand.isEmpty() && !telefon.getBrand().toLowerCase().contains(brand)) continue;
+            if (!model.isEmpty() && !telefon.getModel().toLowerCase().contains(model)) continue;
+            if (!procesor.isEmpty() && !telefon.getProcesor().toLowerCase().contains(procesor)) continue;
+
             if (!camera.isEmpty()) {
                 try {
                     int cameraValue = Integer.parseInt(camera);
-                    if (telefon.getCamera() != cameraValue) {
-                        continue;
-                    }
+                    if (telefon.getCamera() != cameraValue) continue;
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Introduce un numar valid.");
+                    JOptionPane.showMessageDialog(null, "Introduceți un număr valid pentru Camera!");
                     return;
                 }
             }
+
+            if (!displayTip.isEmpty() && !telefon.getDisplayTip().toLowerCase().contains(displayTip)) continue;
             if (!ecran.isEmpty()) {
                 try {
                     double ecranValue = Double.parseDouble(ecran);
-                    if (telefon.getMarimeEcran() <= ecranValue) {
-                        continue;
-                    }
+                    if (telefon.getMarimeEcran() < ecranValue) continue;
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Introduce un numar valid.");
+                    JOptionPane.showMessageDialog(null, "Introduceți un număr valid pentru Ecran!");
                     return;
                 }
             }
+
             if (!pret.isEmpty()) {
                 try {
                     double pretValue = Double.parseDouble(pret);
-                    if (telefon.getPret() >= pretValue) {
-                        continue;
-                    }
+                    if (telefon.getPret() > pretValue) continue;
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Introduce un numar valid.");
+                    JOptionPane.showMessageDialog(null, "Introduceți un număr valid pentru Pret!");
                     return;
                 }
             }
-            if (!displayTip.isEmpty() && !telefon.getDisplayTip().toLowerCase().contains(displayTip))
-                continue;
+
             if (!baterie.isEmpty()) {
                 try {
                     int baterieValue = Integer.parseInt(baterie);
-                    if (telefon.getBaterie() != baterieValue) {
-                        continue;
-                    }
+                    if (telefon.getBaterie() < baterieValue) continue;
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Introduce un numar valid.");
+                    JOptionPane.showMessageDialog(null, "Introduceți un număr valid pentru Baterie!");
                     return;
                 }
             }
@@ -210,24 +245,44 @@ public class TelefonFrame extends JFrame {
         }
 
         if (sb.length() == 0) {
-            rezultat.setText("Nu exista.");
-        } else {
-            rezultat.setText(sb.toString());
+            sb.append("Nu au fost gasite telefoane care sa se potriveasca criteriilor.");
         }
-    }
 
-    private void saveTelefoaneToFile() {
-        AccesareFisier.saveToFile("C:\\Users\\ichim\\Desktop\\telefoane.txt", telefoane);
-        JOptionPane.showMessageDialog(this, "Datele au fost salvate cu succes!");
-    }
-
-    private void loadTelefoaneFromFile() {
-        telefoane = AccesareFisier.loadFromFile("C:\\Users\\ichim\\Desktop\\telefoane.txt");
-        StringBuilder sb = new StringBuilder();
-        for (Telefon telefon : telefoane) {
-            sb.append(telefon.toString()).append("\n");
-        }
         rezultat.setText(sb.toString());
-        JOptionPane.showMessageDialog(this, "Datele au fost incarcate!");
+    }
+
+    public void loadTelefoaneFromFile() {
+        telefoane.clear();
+        try (BufferedReader reader = new BufferedReader(new FileReader(locatie))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split("\\|");
+                String brand = data[0];
+                double marimeEcran = Double.parseDouble(data[1]);
+                String model = data[2];
+                int camera = Integer.parseInt(data[3]);
+                String procesor = data[4];
+                double pret = Double.parseDouble(data[5]);
+                int baterie = Integer.parseInt(data[6]);
+                String displayTip = data[7];
+
+                Telefon telefon = new Telefon(brand, marimeEcran, model, camera, procesor, pret, baterie, displayTip);
+                telefoane.add(telefon);
+            }
+            JOptionPane.showMessageDialog(this, "Datele au fost incarcate cu succes!");
+        } catch (IOException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Eroare la incarcarea datelor!");
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                TelefonFrame frame = new TelefonFrame(new ArrayList<>());
+                frame.setVisible(true);
+            }
+        });
     }
 }

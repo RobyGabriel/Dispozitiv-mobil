@@ -1,10 +1,8 @@
 package com.mycompany.dispozitiv_mobil;
 
-import com.mycompany.dispozitiv_mobil.Tableta;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.ArrayList;
 
@@ -77,20 +75,6 @@ public class TabletaFrame extends JFrame {
         styleButton(loadButton);
         panelFiltre.add(loadButton);
 
-        addButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                addTableta();
-            }
-        });
-
-        loadButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                loadTelefoaneFromFile();
-            }
-        });
-
         rezultat = new JTextArea(20, 50);
         rezultat.setEditable(false);
         scrollPanel = new JScrollPane(rezultat);
@@ -100,11 +84,15 @@ public class TabletaFrame extends JFrame {
         add(panelFiltre, BorderLayout.WEST);
         add(scrollPanel, BorderLayout.CENTER);
 
-        filterButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                filtreazaTablete();
-            }
+        filterButton.addActionListener((ActionEvent e) -> {
+            filtreazaTablete();
+        });
+        addButton.addActionListener((ActionEvent e) -> {
+            addTableta();
+        });
+
+        loadButton.addActionListener((ActionEvent e) -> {
+            loadTelefoaneFromFile();
         });
     }
 
@@ -141,7 +129,6 @@ public class TabletaFrame extends JFrame {
 
     private void addTableta() {
         try {
-            // Get values from text fields
             String brand = brandField.getText();
             String model = modelField.getText();
             String procesor = procesorField.getText();
@@ -178,7 +165,6 @@ public class TabletaFrame extends JFrame {
                     + tableta.getDisplayTip());
             writer.newLine();
         } catch (IOException e) {
-            e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Eroare la salvarea datelor!");
         }
     }
@@ -193,72 +179,6 @@ public class TabletaFrame extends JFrame {
         pretField.setText("");
         baterieField.setText("");
         tastaturaCheckBox.setSelected(false);
-    }
-
-    public void filtreazaTablete() {
-        StringBuilder sb = new StringBuilder();
-        String brand = brandField.getText().toLowerCase();
-        String model = modelField.getText().toLowerCase();
-        String procesor = procesorField.getText().toLowerCase();
-        String camera = cameraField.getText();
-        String displayTip = displayTipField.getText().toLowerCase();
-        String ecran = ecranField.getText();
-        String pret = pretField.getText();
-        String baterie = baterieField.getText();
-        boolean areTastatura = tastaturaCheckBox.isSelected();
-
-        for (Tableta tableta : tablete) {
-            if (!brand.isEmpty() && !tableta.getBrand().toLowerCase().contains(brand)) continue;
-            if (!model.isEmpty() && !tableta.getModel().toLowerCase().contains(model)) continue;
-            if (!procesor.isEmpty() && !tableta.getProcesor().toLowerCase().contains(procesor)) continue;
-
-            if (!camera.isEmpty()) {
-                try {
-                    int cameraValue = Integer.parseInt(camera);
-                    if (tableta.getCamera() != cameraValue) continue;
-                } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Introduceți un număr valid pentru Camera!");
-                    return;
-                }
-            }
-
-            if (!displayTip.isEmpty() && !tableta.getDisplayTip().toLowerCase().contains(displayTip)) continue;
-            if (!ecran.isEmpty()) {
-                try {
-                    double ecranValue = Double.parseDouble(ecran);
-                    if (tableta.getMarimeEcran() < ecranValue) continue;
-                } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Introduceți un număr valid pentru Marime Ecran!");
-                    return;
-                }
-            }
-
-            if (!pret.isEmpty()) {
-                try {
-                    double pretValue = Double.parseDouble(pret);
-                    if (tableta.getPret() > pretValue) continue;
-                } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Introduceți un număr valid pentru Pret!");
-                    return;
-                }
-            }
-
-            if (!baterie.isEmpty()) {
-                try {
-                    int baterieValue = Integer.parseInt(baterie);
-                    if (tableta.getBaterie() < baterieValue) continue;
-                } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Introduceți un număr valid pentru Baterie!");
-                    return;
-                }
-            }
-
-            if (areTastatura && !tableta.areTastatura()) continue;
-
-            sb.append(tableta).append("\n");
-        }
-
-        rezultat.setText(sb.toString());
     }
 
     private void loadTelefoaneFromFile() {
@@ -293,8 +213,72 @@ public class TabletaFrame extends JFrame {
             rezultat.setText(sb.toString());
             JOptionPane.showMessageDialog(this, "Datele au fost incarcate cu succes!");
         } catch (IOException e) {
-            e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Eroare la incarcarea datelor!");
         }
+    }
+    public void filtreazaTablete() {
+        StringBuilder sb = new StringBuilder();
+        String brand = brandField.getText().toLowerCase();
+        String model = modelField.getText().toLowerCase();
+        String procesor = procesorField.getText().toLowerCase();
+        String camera = cameraField.getText();
+        String displayTip = displayTipField.getText().toLowerCase();
+        String ecran = ecranField.getText();
+        String pret = pretField.getText();
+        String baterie = baterieField.getText();
+        boolean areTastatura = tastaturaCheckBox.isSelected();
+
+        for (Tableta tableta : tablete) {
+            if (!brand.isEmpty() && !tableta.getBrand().toLowerCase().contains(brand)) continue;
+            if (!model.isEmpty() && !tableta.getModel().toLowerCase().contains(model)) continue;
+            if (!procesor.isEmpty() && !tableta.getProcesor().toLowerCase().contains(procesor)) continue;
+
+            if (!camera.isEmpty()) {
+                try {
+                    int cameraValue = Integer.parseInt(camera);
+                    if (tableta.getCamera() != cameraValue) continue;
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Introduceti un numar valid pentru Camera!");
+                    return;
+                }
+            }
+
+            if (!displayTip.isEmpty() && !tableta.getDisplayTip().toLowerCase().contains(displayTip)) continue;
+            if (!ecran.isEmpty()) {
+                try {
+                    double ecranValue = Double.parseDouble(ecran);
+                    if (tableta.getMarimeEcran() < ecranValue) continue;
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Introduceti un numar valid pentru Marime Ecran!");
+                    return;
+                }
+            }
+
+            if (!pret.isEmpty()) {
+                try {
+                    double pretValue = Double.parseDouble(pret);
+                    if (tableta.getPret() > pretValue) continue;
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Introduceti un numar valid pentru Pret!");
+                    return;
+                }
+            }
+
+            if (!baterie.isEmpty()) {
+                try {
+                    int baterieValue = Integer.parseInt(baterie);
+                    if (tableta.getBaterie() < baterieValue) continue;
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Introduceți un numar valid pentru Baterie!");
+                    return;
+                }
+            }
+
+            if (areTastatura && !tableta.areTastatura()) continue;
+
+            sb.append(tableta).append("\n");
+        }
+
+        rezultat.setText(sb.toString());
     }
 }

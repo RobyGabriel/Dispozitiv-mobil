@@ -3,7 +3,6 @@ package com.mycompany.dispozitiv_mobil;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.ArrayList;
 
@@ -70,20 +69,6 @@ public class TelefonFrame extends JFrame {
         styleButton(loadButton);
         panelFiltre.add(loadButton);
 
-        addButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                addTelefon();
-            }
-        });
-
-        loadButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                loadTelefoaneFromFile();
-            }
-        });
-
         rezultat = new JTextArea(20, 50);
         rezultat.setEditable(false);
         scrollPanel = new JScrollPane(rezultat);
@@ -93,11 +78,15 @@ public class TelefonFrame extends JFrame {
         add(panelFiltre, BorderLayout.WEST);
         add(scrollPanel, BorderLayout.CENTER);
 
-        filterButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                filtreazaTelefoane();
-            }
+        filterButton.addActionListener((ActionEvent e) -> {
+            filtreazaTelefoane();
+        });
+        addButton.addActionListener((ActionEvent e) -> {
+            addTelefon();
+        });
+
+        loadButton.addActionListener((ActionEvent e) -> {
+            loadTelefoaneFromFile();
         });
     }
 
@@ -168,7 +157,6 @@ public class TelefonFrame extends JFrame {
                     + telefon.getDisplayTip());
             writer.newLine();
         } catch (IOException e) {
-            e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Eroare la salvarea datelor!");
         }
     }
@@ -184,6 +172,29 @@ public class TelefonFrame extends JFrame {
         baterieField.setText("");
     }
 
+    public void loadTelefoaneFromFile() {
+        telefoane.clear();
+        try (BufferedReader reader = new BufferedReader(new FileReader(locatie))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split("\\|");
+                String brand = data[0];
+                double marimeEcran = Double.parseDouble(data[1]);
+                String model = data[2];
+                int camera = Integer.parseInt(data[3]);
+                String procesor = data[4];
+                double pret = Double.parseDouble(data[5]);
+                int baterie = Integer.parseInt(data[6]);
+                String displayTip = data[7];
+
+                Telefon telefon = new Telefon(brand, marimeEcran, model, camera, procesor, pret, baterie, displayTip);
+                telefoane.add(telefon);
+            }
+            JOptionPane.showMessageDialog(this, "Datele au fost incarcate cu succes!");
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Eroare la incarcarea datelor!");
+        }
+    }
     public void filtreazaTelefoane() {
         StringBuilder sb = new StringBuilder();
         String brand = brandField.getText().toLowerCase();
@@ -216,7 +227,7 @@ public class TelefonFrame extends JFrame {
                     double ecranValue = Double.parseDouble(ecran);
                     if (telefon.getMarimeEcran() < ecranValue) continue;
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Introduceți un număr valid pentru Ecran!");
+                    JOptionPane.showMessageDialog(null, "Introduceti un numar valid pentru Ecran!");
                     return;
                 }
             }
@@ -226,7 +237,7 @@ public class TelefonFrame extends JFrame {
                     double pretValue = Double.parseDouble(pret);
                     if (telefon.getPret() > pretValue) continue;
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Introduceți un număr valid pentru Pret!");
+                    JOptionPane.showMessageDialog(null, "Introduceti un numar valid pentru Pret!");
                     return;
                 }
             }
@@ -236,7 +247,7 @@ public class TelefonFrame extends JFrame {
                     int baterieValue = Integer.parseInt(baterie);
                     if (telefon.getBaterie() < baterieValue) continue;
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Introduceți un număr valid pentru Baterie!");
+                    JOptionPane.showMessageDialog(null, "Introduceti un numar valid pentru Baterie!");
                     return;
                 }
             }
@@ -249,30 +260,5 @@ public class TelefonFrame extends JFrame {
         }
 
         rezultat.setText(sb.toString());
-    }
-
-    public void loadTelefoaneFromFile() {
-        telefoane.clear();
-        try (BufferedReader reader = new BufferedReader(new FileReader(locatie))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] data = line.split("\\|");
-                String brand = data[0];
-                double marimeEcran = Double.parseDouble(data[1]);
-                String model = data[2];
-                int camera = Integer.parseInt(data[3]);
-                String procesor = data[4];
-                double pret = Double.parseDouble(data[5]);
-                int baterie = Integer.parseInt(data[6]);
-                String displayTip = data[7];
-
-                Telefon telefon = new Telefon(brand, marimeEcran, model, camera, procesor, pret, baterie, displayTip);
-                telefoane.add(telefon);
-            }
-            JOptionPane.showMessageDialog(this, "Datele au fost incarcate cu succes!");
-        } catch (IOException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Eroare la incarcarea datelor!");
-        }
     }
 }
